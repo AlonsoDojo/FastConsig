@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema id="ACTC855"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:cat="http://www.cip-bancos.org.br/catalogomsg"
+           targetNamespace="http://www.cip-bancos.org.br/ARQ/ACTC855.xsd"
+           xmlns="http://www.cip-bancos.org.br/ARQ/ACTC855.xsd"
+           elementFormDefault="qualified"
+           version="1.11.0">
+
+    <!-- Definição dos Tipos Globais -->
+    <xs:include schemaLocation="ACTCTIPOS.xsd" />
+
+    <!-- Definição do ACTCDOC do arquivo -->
+    <xs:complexType name="ACTCDOCComplexType">
+        <xs:sequence>
+            <xs:element name="BCARQ" type="BCARQComplexType" />
+            <xs:element name="SISARQ" type="SISARQComplexType" />
+            <xs:element name="ESTARQ" type="ESTARQSimpleType" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Definição do ACTCDOC -->
+    <xs:element name="ACTCDOC" type="ACTCDOCComplexType">
+        <xs:annotation>
+            <xs:documentation>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <!-- Definição do SISARQ do arquivo -->
+    <xs:complexType name="SISARQComplexType">
+        <xs:choice>
+            <xs:element name="ACTC855" type="ACTC855ComplexType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:InfMensagem>
+                            <cat:Mensagem>Destinado à Instituição Proponente informar o número da nova operação ao FGO</cat:Mensagem>
+                            <cat:Emissor>IF Proponente</cat:Emissor>
+                            <cat:Destinatario>CTC</cat:Destinatario>
+                        </cat:InfMensagem>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ACTC855RET" type="ACTC855RETComplexType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:InfMensagem>
+                            <cat:Mensagem>CTC Informa Resposta de processameto do número da nova operação</cat:Mensagem>
+                            <cat:Emissor>CTC</cat:Emissor>
+                            <cat:Destinatario>IF Proponente</cat:Destinatario>
+                        </cat:InfMensagem>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="ACTC855ComplexType">
+        <xs:sequence>
+            <xs:element name="Grupo_ACTC855_IdentdNovaOp" type="Grupo_ACTC855_IdentdNovaOpComplexType" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        Grupo Identificador da Nova Operação
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Grupo_ACTC855_IdentdNovaOpComplexType">
+        <xs:sequence>
+            <xs:element name="IdentdPartAdmdo" type="CNPJBase">
+                <xs:annotation>
+                    <xs:documentation>
+                        Identificador do participante administrado
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NumCtrlIF" type="ControleIF">
+                <xs:annotation>
+                    <xs:documentation>
+                        Número de controle IF do contrato para a portabilidade
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NUPortlddCTC" type="NU">
+                <xs:annotation>
+                    <xs:documentation>
+                        Número Portabilidade CTC
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NumNovaOp" type="NumNovaOp">
+                <xs:annotation>
+                    <xs:documentation>
+                        Número da Nova Operação/Contrato
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ACTC855RETComplexType">
+        <xs:sequence>
+            <xs:element name="Grupo_ACTC855RET_IdentdGarantiaActo" type="Grupo_ACTC855RET_IdentdGarantiaActo_ComplexType" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        Grupo Identificador da Garantia Aceita
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Grupo_ACTC855RET_IdentdGarantiaRecsd" type="Grupo_ACTC855RET_IdentdGarantiaRecsd_ComplexType" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        Grupo Identificador da Garantia Recusada
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Grupo_ACTC855RET_IdentdGarantiaActo_ComplexType">
+        <xs:sequence>
+            <xs:element name="IdentdPartAdmdo" type="CNPJBase">
+                <xs:annotation>
+                    <xs:documentation>
+                        Identificador do participante administrado
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NumCtrlIF" type="ControleIF">
+                <xs:annotation>
+                    <xs:documentation>
+                        Número Controle IF
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NUPortlddCTC" type="NU">
+                <xs:annotation>
+                    <xs:documentation>
+                        Número Portabilidade CTC
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NumNovaOp" type="NumNovaOp">
+                <xs:annotation>
+                    <xs:documentation>
+                        Número da Nova Operação/Contrato
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="SitPortlddCTC" type="SitPortlddCTC">
+                <xs:annotation>
+                    <xs:documentation>
+                        Situação Portabilidade
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Grupo_ACTC855RET_IdentdGarantiaRecsd_ComplexType">
+        <xs:sequence>
+            <xs:element name="IdentdPartAdmdo" type="CNPJBase_CodErro">
+                <xs:annotation>
+                    <xs:documentation>
+                        Identificador do participante administrado
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NumCtrlIF" type="ControleIF_CodErro">
+                <xs:annotation>
+                    <xs:documentation>
+                        Número de controle IF
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NUPortlddCTC" type="NU_CodErro">
+                <xs:annotation>
+                    <xs:documentation>
+                        Número Portabilidade CTC
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NumNovaOp" type="NumNovaOp_CodErro">
+                <xs:annotation>
+                    <xs:documentation>
+                        Número da Nova Operação/Contrato
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="SitPortlddCTC" type="SitPortlddCTC_CodErro" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Situação Portabilidade
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="MtvRecusaEfetvGarantiaFGO" type="MtvRecusaEfetvGarantiaFGO_CodErro" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Motivo Recusa da Efetivação da Garantia no FGO
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="CodErro" type="CodErro" use="optional"/>
+    </xs:complexType>
+
+</xs:schema>

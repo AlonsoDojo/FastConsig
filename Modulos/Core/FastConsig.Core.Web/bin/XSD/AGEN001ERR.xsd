@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    versão 2.0.0 : Implantação Novo Cadastro Positivo
+	versão 2.1.0 : Exclusão da tag CdAvsCli no arquivo ACPO112
+	versão 2.2.0 : Exclusão do targetNamespace e do xmlns na tag xs:schema
+	versão 2.2.1 : Correção da tag CnpjCtrc no arquivo ACPO113
+	versão 2.3.0 : Correção das tags TsCnct e CnpjGstCnct no arquivo ACPO103
+	               Exclusão da tag CdAvsCli do arquivo ACPO112
+	               Retirado o domínio 'S' da tag CmdoOpr do arquivo ACPO111
+	               Correção da tag CmdoFatFchFut do arquivo ACPO111
+                   Correção de obrigatoriedade da tag GrupoPer do arquivo ACPO117
+                   Correção de obrigatoriedade da tag Ppl do arquivo ACPO110
+                   Correção de "maxOccurs" na tag Cta dos arquivos ACPO113/ACPO115
+    versão 2.4.0 : Exclusão da tag NrRmsRlc do arquivo ACPO111
+                   Correção de obrigatoriedade da tag Cli e Opr do arquivo ACPO113
+                   Correção de obrigatoriedade da tag Cli e Opr do arquivo ACPO115
+                   Inclusão de tag NumCtrlPart do arquivo ACPO117
+                   Retirado o domínnio '2' da tag IdfCli do arquivo ACPO117
+                   Inclusão de tag NumCtrlPart e NumCtrlCIP do arquivo ACPO118
+                   Retirado o domínnio '2' da tag IdfCli do arquivo ACPO118
+    versão 2.5.0 : Correção sequência grupo Cli e Opr ACPO113 e ACPO115
+                   Alteração do atributo NrTelCli para os arquivos ACPO107 e ACPO108
+                   Alteração dos atributos NrTelCttPpl, NrTelAtdCsmoPpl, NrTelAutdLmnrPpl, NrTelCttPct, NrTelAtdtCsmoPct, NrTelAutdLmnrPct para os arquivos ACPO109
+    versão 2.6.0 : Ajuste de validação na tag VlCtrdFut do arquivo ACPO111
+    			   Correção da tag CmdoFatFchdFut do arquivo ACPO111
+    			   Ajuste nas tags DtRms, DtRefBaseItno, DtCtrc, DtAprc, DtVnctUltPcl, DtVnctOpr, DtVnctUltPclCsr, DtContCtCsr, DtVnctPclAnt, DtPgtoAvls, DtVnctPrxPcl, DtVnctFatFchdAnt, DtVnctFatFchdFut, DtFchtAnt, DtFchtAtu, DtVnctPclAntCsr, DtPgtoAvlsCsr, DtVnctPrxPclCsr, DtPgtoPclAnt, DtPgtoFatFchdAnt e DtPgtoPclAntCsr do arquivo ACPO111
+    versão 2.7.0 : Remoção de obrigatoriedade das tags CdOcrCli, CdOcrEnd, CdOcrTel e CdOcrEndEtn do arquivo ACPO108
+                   Remoção de obrigatoriedade das tags CdOcrPpl, CdOcrCttPpl, CdOcrAtdtCsmoPpl e CdOcrAutdLmnrPpl do arquivo ACPO110
+                   Remoção da tag "Opr" de dentro da  tag "Cli" do arquivo ACPO115
+    versão 2.8.0 : Tornar o atributo NrUncoCta de preenchimento obrigatório no arquivo ACPO115
+	               Alterar o atributo IdfcCli para que o conteúdo posso iniciar com 0 (zero) dos arquivos ACPO101, ACPO107, ACPO108, ACPO113 e ACPO115
+-->
+
+<xs:schema id="AGEN001ERR"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:cat="http://www.cip-bancos.org.br/catalogomsg"
+           elementFormDefault="qualified"
+           version="2.8.0">
+
+    <xs:include schemaLocation="ACPOTIPOS.xsd"/>
+
+    <!-- Definicao do arquivo -->
+    <xs:element name="ACPODOC" type="ACPODOCERRComplexType">
+        <xs:annotation>
+            <xs:documentation>
+                <cat:InfEvento>
+                    <cat:Evento>AGEN001ERR - IF requisita Teste de conectividade.</cat:Evento>
+                    <cat:Descricao>IF requisita Teste de conectividade.</cat:Descricao>
+                    <cat:Servico>IF requisita Teste de conectividade.</cat:Servico>
+                    <cat:TipoFluxo>
+                    </cat:TipoFluxo>
+                </cat:InfEvento>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+</xs:schema>

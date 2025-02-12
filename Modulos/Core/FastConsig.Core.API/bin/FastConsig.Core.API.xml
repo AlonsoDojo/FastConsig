@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FastConsig.Core.API</name>
+    </assembly>
+    <members>
+        <member name="M:FastConsig.Core.API.SwaggerConfig.Register">
+            <summary>
+            Para Exportar o swagger http://localhost:44361/swagger/docs/v1/
+            </summary>
+        </member>
+        <member name="T:FastConsig.Core.API.DominiosController">
+            <summary>
+            APIs de Dominio
+            </summary>
+        </member>
+        <member name="M:FastConsig.Core.API.DominiosController.ListarBancosV1">
+            <summary>
+            Lista de Bancos
+            </summary>
+            <returns>Lista de Bancos</returns>
+        </member>
+        <member name="M:FastConsig.Core.API.DominiosController.AlterarBancoV1(FastConsig.Core.Entity.Bancos)">
+            <summary>
+            Alterar um Banco
+            </summary>
+            <returns>Alterar um Banco</returns>
+        </member>
+        <member name="M:FastConsig.Core.API.DominiosController.IncluirBancoV1(FastConsig.Core.Entity.Bancos)">
+            <summary>
+            Incluir um Banco
+            </summary>
+            <returns>Incluir um Banco</returns>
+        </member>
+        <member name="M:FastConsig.Core.API.DominiosController.ListarOPromotorasV1">
+            <summary>
+            Lista de Promotoras
+            </summary>
+            <returns>Lista de Promotoras</returns>
+        </member>
+        <member name="M:FastConsig.Core.API.DominiosController.AlterarPromotoraV1(FastConsig.Core.Entity.Promotoras)">
+            <summary>
+            Alterar uma Promotora
+            </summary>
+            <returns>Alterar uma Promotora</returns>
+        </member>
+        <member name="M:FastConsig.Core.API.DominiosController.IncluirPromotoraV1(FastConsig.Core.Entity.Promotoras)">
+            <summary>
+            Incluir uma Promotora
+            </summary>
+            <returns>Incluir uma Promotora</returns>
+        </member>
+        <member name="M:FastConsig.Core.API.DominiosController.ListarGerntesV1">
+            <summary>
+            Lista de Gerentes
+            </summary>
+            <returns>Lista de Gerentes</returns>
+        </member>
+        <member name="M:FastConsig.Core.API.DominiosController.AlterarGernteV1(FastConsig.Core.Entity.Gerentes)">
+            <summary>
+            Alterar um Gerente
+            </summary>
+            <returns>Alterar um Gerente</returns>
+        </member>
+        <member name="M:FastConsig.Core.API.DominiosController.IncluirGernteV1(FastConsig.Core.Entity.Gerentes)">
+            <summary>
+            Incluir um Gerente
+            </summary>
+            <returns>Incluir um Gerente</returns>
+        </member>
+        <member name="M:FastConsig.Core.API.DominiosController.ListarRedeLojasV1">
+            <summary>
+            Lista de Rede de Lojas
+            </summary>
+            <returns>Lista de Rede de Lojas</returns>
+        </member>
+        <member name="M:FastConsig.Core.API.DominiosController.AlterarRedeLojasV1(FastConsig.Core.Entity.RedeLoja)">
+            <summary>
+            Alterar uma Rede de Lojas
+            </summary>
+            <returns>Alterar uma Rede de Lojas</returns>
+        </member>
+        <member name="M:FastConsig.Core.API.DominiosController.IncluirRedeLojasV1(FastConsig.Core.Entity.RedeLoja)">
+            <summary>
+            Incluir uma Rede de Lojas
+            </summary>
+            <returns>Incluir uma Rede de Lojas</returns>
+        </member>
+        <member name="M:FastConsig.Core.API.DominiosController.ListarLojasV1">
+            <summary>
+            Lista de Lojas
+            </summary>
+            <returns>Lista de Lojas</returns>
+        </member>
+        <member name="M:FastConsig.Core.API.DominiosController.AlterarLojaV1(FastConsig.Core.Entity.Lojas)">
+            <summary>
+            Alterar uma Loja
+            </summary>
+            <returns>Alterar uma Loja</returns>
+        </member>
+        <member name="M:FastConsig.Core.API.DominiosController.IncluirLojaV1(FastConsig.Core.Entity.Lojas)">
+            <summary>
+            Incluir uma Loja
+            </summary>
+            <returns>Incluir uma Loja</returns>
+        </member>
+        <member name="F:FastConsig.Core.API.SiteMaster.HeadContent">
+            <summary>
+            HeadContent control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:FastConsig.Core.API.SiteMaster.MainContent">
+            <summary>
+            MainContent control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:FastConsig.Core.API.Site_Mobile.HeadContent">
+            <summary>
+            HeadContent control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:FastConsig.Core.API.Site_Mobile.form1">
+            <summary>
+            form1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:FastConsig.Core.API.Site_Mobile.FeaturedContent">
+            <summary>
+            FeaturedContent control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:FastConsig.Core.API.Site_Mobile.MainContent">
+            <summary>
+            MainContent control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+    </members>
+</doc>

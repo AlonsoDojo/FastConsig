@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D380894A-C685-4E9C-9FD6-48A284F159FC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FastConsig.Core.Data</RootNamespace>
+    <AssemblyName>FastConsig.Core.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Framework">
+      <HintPath>..\..\..\Dependencias\Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationsLogData.base.cs" />
+    <Compile Include="ApplicationsLogData.customized.cs" />
+    <Compile Include="AuditTableData.base.cs" />
+    <Compile Include="AuditTableData.customized.cs" />
+    <Compile Include="AutorizacaoDigitalConsignadoData.base.cs" />
+    <Compile Include="AutorizacaoDigitalConsignadoData.customized.cs" />
+    <Compile Include="BancosData.base.cs" />
+    <Compile Include="BancosData.customized.cs" />
+    <Compile Include="CepData.base.cs" />
+    <Compile Include="CepData.customized.cs" />
+    <Compile Include="CheckListData.base.cs" />
+    <Compile Include="CheckListData.customized.cs" />
+    <Compile Include="CheckListItensData.base.cs" />
+    <Compile Include="CheckListItensData.customized.cs" />
+    <Compile Include="CompromissosData.base.cs" />
+    <Compile Include="CompromissosData.customized.cs" />
+    <Compile Include="EstadoCivilData.base.cs" />
+    <Compile Include="EstadoCivilData.customized.cs" />
+    <Compile Include="EstadosData.base.cs" />
+    <Compile Include="EstadosData.customized.cs" />
+    <Compile Include="FamiliaProdutoData.base.cs" />
+    <Compile Include="FamiliaProdutoData.customized.cs" />
+    <Compile Include="FasesData.base.cs" />
+    <Compile Include="FasesData.customized.cs" />
+    <Compile Include="FasesProdutoData.base.cs" />
+    <Compile Include="FasesProdutoData.customized.cs" />
+    <Compile Include="GerentesData.base.cs" />
+    <Compile Include="GerentesData.customized.cs" />
+    <Compile Include="LojasData.base.cs" />
+    <Compile Include="LojasData.customized.cs" />
+    <Compile Include="MeioLiberacaoData.base.cs" />
+    <Compile Include="MeioLiberacaoData.customized.cs" />
+    <Compile Include="MotivoRecusaData.base.cs" />
+    <Compile Include="MotivoRecusaData.customized.cs" />
+    <Compile Include="NacionalidadeData.base.cs" />
+    <Compile Include="NacionalidadeData.customized.cs" />
+    <Compile Include="OcorrenciaProdutoFaseData.base.cs" />
+    <Compile Include="OcorrenciaProdutoFaseData.customized.cs" />
+    <Compile Include="OcorrenciasConsignadoAcaoData.base.cs" />
+    <Compile Include="OcorrenciasConsignadoAcaoData.customized.cs" />
+    <Compile Include="OcorrenciasData.base.cs" />
+    <Compile Include="OcorrenciasData.customized.cs" />
+    <Compile Include="OcorrenciasINSSData.base.cs" />
+    <Compile Include="OcorrenciasINSSData.customized.cs" />
+    <Compile Include="OcorrenciasSIAPEData.base.cs" />
+    <Compile Include="OcorrenciasSIAPEData.customized.cs" />
+    <Compile Include="OrgaoEmissorData.base.cs" />
+    <Compile Include="OrgaoEmissorData.customized.cs" />
+    <Compile Include="OrgaoSIAPEData.base.cs" />
+    <Compile Include="OrgaoSIAPEData.customized.cs" />
+    <Compile Include="PessoasData.base.cs" />
+    <Compile Include="PessoasData.customized.cs" />
+    <Compile Include="PoliticaConfiguracaoExecucaoData.base.cs" />
+    <Compile Include="PoliticaConfiguracaoExecucaoData.customized.cs" />
+    <Compile Include="PoliticaConfiguracaoExecucaoSimulacaoData.base.cs" />
+    <Compile Include="PoliticaConfiguracaoExecucaoSimulacaoData.customized.cs" />
+    <Compile Include="PoliticaParametroProdutoData.base.cs" />
+    <Compile Include="PoliticaParametroProdutoData.customized.cs" />
+    <Compile Include="PoliticasData.base.cs" />
+    <Compile Include="PoliticasData.customized.cs" />
+    <Compile Include="ProdutosData.base.cs" />
+    <Compile Include="ProdutosData.customized.cs" />
+    <Compile Include="PromotorasData.base.cs" />
+    <Compile Include="PromotorasData.customized.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropostaArquivosData.base.cs" />
+    <Compile Include="PropostaArquivosData.customized.cs" />
+    <Compile Include="PropostaChecklistData.base.cs" />
+    <Compile Include="PropostaChecklistData.customized.cs" />
+    <Compile Include="PropostaConsultasData.base.cs" />
+    <Compile Include="PropostaConsultasData.customized.cs" />
+    <Compile Include="PropostaContratosREFINData.base.cs" />
+    <Compile Include="PropostaContratosREFINData.customized.cs" />
+    <Compile Include="PropostaHierarquiaConsultaData.base.cs" />
+    <Compile Include="PropostaHierarquiaConsultaData.customized.cs" />
+    <Compile Include="PropostaHistoricoData.base.cs" />
+    <Compile Include="PropostaHistoricoData.customized.cs" />
+    <Compile Include="PropostaOcorrenciasData.base.cs" />
+    <Compile Include="PropostaOcorrenciasData.customized.cs" />
+    <Compile Include="PropostaOperacaoData.base.cs" />
+    <Compile Include="PropostaOperacaoData.customized.cs" />
+    <Compile Include="PropostaParcelasData.base.cs" />
+    <Compile Include="PropostaParcelasData.customized.cs" />
+    <Compile Include="PropostaPendenciaData.base.cs" />
+    <Compile Include="PropostaPendenciaData.customized.cs" />
+    <Compile Include="PropostasData.base.cs" />
+    <Compile Include="PropostasData.customized.cs" />
+    <Compile Include="RamoAtividadeData.base.cs" />
+    <Compile Include="RamoAtividadeData.customized.cs" />
+    <Compile Include="RedeLojaData.base.cs" />
+    <Compile Include="RedeLojaData.customized.cs" />
+    <Compile Include="SimulacaoContratosREFINData.base.cs" />
+    <Compile Include="SimulacaoContratosREFINData.customized.cs" />
+    <Compile Include="SimulacaoOperacaoData.base.cs" />
+    <Compile Include="SimulacaoOperacaoData.customized.cs" />
+    <Compile Include="SimulacaoParcelasData.base.cs" />
+    <Compile Include="SimulacaoParcelasData.customized.cs" />
+    <Compile Include="SimulacaoParcelasREFINData.base.cs" />
+    <Compile Include="SimulacaoParcelasREFINData.customized.cs" />
+    <Compile Include="SimulacaoPessoaData.base.cs" />
+    <Compile Include="SimulacaoPessoaData.customized.cs" />
+    <Compile Include="SimulacaoPropostaData.base.cs" />
+    <Compile Include="SimulacaoPropostaData.customized.cs" />
+    <Compile Include="StatusData.base.cs" />
+    <Compile Include="StatusData.customized.cs" />
+    <Compile Include="TipoBeneficioINSSData.base.cs" />
+    <Compile Include="TipoBeneficioINSSData.customized.cs" />
+    <Compile Include="TipoCompromissoData.base.cs" />
+    <Compile Include="TipoCompromissoData.customized.cs" />
+    <Compile Include="TipoComunicacaoData.base.cs" />
+    <Compile Include="TipoComunicacaoData.customized.cs" />
+    <Compile Include="TipoDadoData.base.cs" />
+    <Compile Include="TipoDadoData.customized.cs" />
+    <Compile Include="TipoDocumentoData.base.cs" />
+    <Compile Include="TipoDocumentoData.customized.cs" />
+    <Compile Include="TipoDocumentoIdentidadeData.base.cs" />
+    <Compile Include="TipoDocumentoIdentidadeData.customized.cs" />
+    <Compile Include="TipoFormalizacaoData.base.cs" />
+    <Compile Include="TipoFormalizacaoData.customized.cs" />
+    <Compile Include="TipoPessoaData.base.cs" />
+    <Compile Include="TipoPessoaData.customized.cs" />
+    <Compile Include="TipoPoliticaData.base.cs" />
+    <Compile Include="TipoPoliticaData.customized.cs" />
+    <Compile Include="ViewContratosREFINUtilizadosData.base.cs" />
+    <Compile Include="ViewContratosREFINUtilizadosData.customized.cs" />
+    <Compile Include="ViewMonitorData.base.cs" />
+    <Compile Include="ViewMonitorData.customized.cs" />
+    <Compile Include="ViewPropostaCheckListData.base.cs" />
+    <Compile Include="ViewPropostaCheckListData.customized.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Seguranca\FastConsig.Seguranca.Entity\FastConsig.Seguranca.Entity.csproj">
+      <Project>{C579806D-D2D0-447F-88D3-BFC0A72A3F7A}</Project>
+      <Name>FastConsig.Seguranca.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FastConsig.Core.Entity\FastConsig.Core.Entity.csproj">
+      <Project>{a5163747-e92c-4065-91a6-16f2001e50c4}</Project>
+      <Name>FastConsig.Core.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

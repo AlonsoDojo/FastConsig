@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+    versão 2.0.0 : Implantação Novo Cadastro Positivo
+	versão 2.1.0 : Exclusão da tag CdAvsCli no arquivo ACPO112
+	versão 2.2.0 : Exclusão do targetNamespace e do xmlns na tag xs:schema
+	versão 2.2.1 : Correção da tag CnpjCtrc no arquivo ACPO113
+	versão 2.3.0 : Correção das tags TsCnct e CnpjGstCnct no arquivo ACPO103
+	               Exclusão da tag CdAvsCli do arquivo ACPO112
+	               Retirado o domínio 'S' da tag CmdoOpr do arquivo ACPO111
+	               Correção da tag CmdoFatFchFut do arquivo ACPO111
+                   Correção de obrigatoriedade da tag GrupoPer do arquivo ACPO117
+                   Correção de obrigatoriedade da tag Ppl do arquivo ACPO110
+                   Correção de "maxOccurs" na tag Cta dos arquivos ACPO113/ACPO115
+    versão 2.4.0 : Exclusão da tag NrRmsRlc do arquivo ACPO111
+                   Correção de obrigatoriedade da tag Cli e Opr do arquivo ACPO113
+                   Correção de obrigatoriedade da tag Cli e Opr do arquivo ACPO115
+                   Inclusão de tag NumCtrlPart do arquivo ACPO117
+                   Retirado o domínnio '2' da tag IdfCli do arquivo ACPO117
+                   Inclusão de tag NumCtrlPart e NumCtrlCIP do arquivo ACPO118
+                   Retirado o domínnio '2' da tag IdfCli do arquivo ACPO118
+    versão 2.5.0 : Correção sequência grupo Cli e Opr ACPO113 e ACPO115
+                   Alteração do atributo NrTelCli para os arquivos ACPO107 e ACPO108
+                   Alteração dos atributos NrTelCttPpl, NrTelAtdCsmoPpl, NrTelAutdLmnrPpl, NrTelCttPct, NrTelAtdtCsmoPct, NrTelAutdLmnrPct para os arquivos ACPO109
+    versão 2.6.0 : Ajuste de validação na tag VlCtrdFut do arquivo ACPO111
+    			   Correção da tag CmdoFatFchdFut do arquivo ACPO111
+    			   Ajuste nas tags DtRms, DtRefBaseItno, DtCtrc, DtAprc, DtVnctUltPcl, DtVnctOpr, DtVnctUltPclCsr, DtContCtCsr, DtVnctPclAnt, DtPgtoAvls, DtVnctPrxPcl, DtVnctFatFchdAnt, DtVnctFatFchdFut, DtFchtAnt, DtFchtAtu, DtVnctPclAntCsr, DtPgtoAvlsCsr, DtVnctPrxPclCsr, DtPgtoPclAnt, DtPgtoFatFchdAnt e DtPgtoPclAntCsr do arquivo ACPO111
+    versão 2.7.0 : Remoção de obrigatoriedade das tags CdOcrCli, CdOcrEnd, CdOcrTel e CdOcrEndEtn do arquivo ACPO108
+                   Remoção de obrigatoriedade das tags CdOcrPpl, CdOcrCttPpl, CdOcrAtdtCsmoPpl e CdOcrAutdLmnrPpl do arquivo ACPO110
+                   Remoção da tag "Opr" de dentro da  tag "Cli" do arquivo ACPO115
+    versão 2.8.0 : Tornar o atributo NrUncoCta de preenchimento obrigatório no arquivo ACPO115
+	               Alterar o atributo IdfcCli para que o conteúdo posso iniciar com 0 (zero) dos arquivos ACPO101, ACPO107, ACPO108, ACPO113 e ACPO115
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           id="ADDADOC"
+           version="2.8.0">
+
+    <xs:element name="ADDADOC" type="ADDADOCPrincipalComplexType">
+        <xs:annotation>
+            <xs:documentation>
+                ADDADOC - Checklist
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <xs:complexType name="ADDADOCPrincipalComplexType" mixed="true">
+        <xs:sequence>
+            <xs:element name="BCARQ" type="BCARQComplexType" />
+            <xs:element name="SISARQ" type="SISARQComplexType" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Definicao do BCARQ do arquivo -->
+    <xs:complexType name="BCARQComplexType" mixed="true">
+        <xs:sequence>
+            <xs:element name="NomArq" type="NomArq">
+                <xs:annotation>
+                    <xs:documentation>
+                        Nome do arquivo
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NumCtrlEmis" type="ControleIF">
+                <xs:annotation>
+                    <xs:documentation>
+                        Numero Controle do Emissor
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NumCtrlDestOr" type="ControleIF" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Numero Controle Destinatario Original
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ISPBEmissor" type="CNPJBase">
+                <xs:annotation>
+                    <xs:documentation>
+                        ISPB Emissor
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ISPBDestinatario" type="CNPJBase">
+                <xs:annotation>
+                    <xs:documentation>
+                        ISPB Destinatario
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DtHr" type="DataHora">
+                <xs:annotation>
+                    <xs:documentation>
+                        Data e Hora de envio
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="SitReq" type="SitCons" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Situacao Requisicao
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="IndrFlagFim" type="IndrFlagFim" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Indicador Flag-Fim
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DtMovto" type="Data">
+                <xs:annotation>
+                    <xs:documentation>
+                        Data Movimento
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="SISARQComplexType" mixed="true">
+        <xs:sequence>
+            <xs:element name="AGEN001" type="AGEN001ComplexType">
+                <xs:annotation>
+                    <xs:documentation>
+                        IF requisita Teste de Conectividade
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AGEN001ComplexType" mixed="true">
+        <xs:sequence>
+            <xs:element name="ISPBEmissor" type="CNPJBase">
+                <xs:annotation>
+                    <xs:documentation>
+                        SPB Emissor
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ISPBDestinatario" type="CNPJBase">
+                <xs:annotation>
+                    <xs:documentation>
+                        ISPB Destinatário
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="MsgECO" type="MsgECO">
+                <xs:annotation>
+                    <xs:documentation>
+                        Mensagem ECO
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="NomArq">
+        <xs:annotation>
+            <xs:documentation>
+                Nome do arquivo
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="40" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ControleIF">
+        <xs:annotation>
+            <xs:documentation>
+                Numero de Controle utilizado para controlar arquivo e registros do arquivo
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="CNPJBase">
+        <xs:annotation>
+            <xs:documentation>
+                Primeiras 8 posicoes do CNPJ.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="8" />
+            <xs:maxLength value="8" />
+            <xs:pattern value="\d{8}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="DataHora">
+        <xs:annotation>
+            <xs:documentation>
+                Data e hora no formato AAAA-MM-DDThh:mm:ss. Onde
+                AAAA = ano,
+                MM = mes [01-12],
+                DD = dia [01-31],
+                hh = horas [00-23],
+                mm = minutos [00-59],
+                ss = segundos [00-59].
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:dateTime">
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="SitCons">
+        <xs:annotation>
+            <xs:documentation>
+                Situacao da Requisicao
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:integer">
+            <xs:totalDigits value="2" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="IndrFlagFim">
+        <xs:annotation>
+            <xs:documentation>
+                Indicador Flag-Fim
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Data">
+        <xs:annotation>
+            <xs:documentation>
+                Data no formato AAAA-MM-DD. Onde
+                AAAA = ano,
+                MM = mes
+                [01-12],
+                DD = dia [01-31].
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:date">
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="MsgECO">
+        <xs:annotation>
+            <xs:documentation>
+                Mensagem ECO
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

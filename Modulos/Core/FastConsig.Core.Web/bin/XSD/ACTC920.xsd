@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ACTC920"
+	xmlns="http://www.cip-bancos.org.br/ARQ/ACTC920.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:cat="http://www.cip-bancos.org.br/catalogomsg"
+	targetNamespace="http://www.cip-bancos.org.br/ARQ/ACTC920.xsd"
+	elementFormDefault="qualified"
+    version="1.11.0">
+	
+	<!-- Definição dos Tipos Globais -->
+	<xs:include schemaLocation="ACTCTIPOS.xsd" />
+
+	<!-- Definição do ACTCDOC do arquivo -->
+	<xs:complexType name="ACTCDOCComplexType">
+		<xs:sequence>
+			<xs:element name="BCARQ" type="BCARQComplexType" />
+			<xs:element name="SISARQ" type="SISARQComplexType" />
+			<xs:element name="ESTARQ" type="ESTARQSimpleType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- Definição do ACTCDOC -->
+	<xs:element name="ACTCDOC" type="ACTCDOCComplexType">
+		<xs:annotation>
+			<xs:documentation>
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>	
+
+	<!-- Definição do SISARQ do arquivo -->
+	<xs:complexType name="SISARQComplexType">
+		<xs:choice>
+			<xs:element name="ACTC920" type="ACTC920ComplexType">
+				<xs:annotation>
+					<xs:documentation>
+						<cat:InfMensagem>
+							<cat:Mensagem>IF Solicita Relatório de Conciliação de Tarifas</cat:Mensagem>
+							<cat:Emissor>IF Proponente/Credora Original</cat:Emissor>
+							<cat:Destinatario>CTC</cat:Destinatario>
+						</cat:InfMensagem>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ACTC920RET" type="ACTC920RETComplexType">
+				<xs:annotation>
+					<xs:documentation>
+						<cat:InfMensagem>
+							<cat:Mensagem>CTC informa resultado da solicitação de Relatório de Conciliação de Tarifas</cat:Mensagem>
+							<cat:Emissor>CTC</cat:Emissor>
+							<cat:Destinatario>IF Proponente/Credora Original</cat:Destinatario>
+						</cat:InfMensagem>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="ACTC920ComplexType">
+		<xs:sequence>
+			<xs:element name="IdentdPartAdmdo" type="CNPJBase">
+				<xs:annotation>
+					<xs:documentation>
+						Identificador Participante Administrado 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NumCtrlIF" type="ControleIF">
+				<xs:annotation>
+					<xs:documentation>
+						Número Controle IF
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice>
+			    <xs:element name="AnoMesRefApurc" type="AnoMes">
+					<xs:annotation>
+						<xs:documentation>
+							Ano/Mês de Referência Apuração	
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			    <xs:element name="Grupo_ACTC920_Per_Apurc" type="Grupo_ACTC920_Per_ApurcComplexType">
+			    	<xs:annotation>
+						<xs:documentation>
+	           				Grupo Período Apuração
+	          			</xs:documentation>
+					</xs:annotation>
+			    </xs:element>
+			</xs:choice>
+			<xs:element name="TpContrto" type="TpContrto" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Tipo Contrato 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TpEnteCons" type="TpEnteCons" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Tipo de Ente Consignante
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC920_Per_ApurcComplexType">
+		<xs:sequence>
+			<xs:element name="DtIniApurc" type="Data">
+				<xs:annotation>
+					<xs:documentation>
+						Data Inicial da Apuração
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DtFimApurc" type="Data">
+				<xs:annotation>
+					<xs:documentation>
+						Data Fim da Apuração
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ACTC920RETComplexType">
+		<xs:sequence>
+			<xs:element name="Grupo_ACTC920RET_RelatConclcActo" type="Grupo_ACTC920RET_RelatConclcActoComplexType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+           				Grupo Relatório Conciliação Aceito
+          			</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Grupo_ACTC920RET_RelatConclcRecsd" type="Grupo_ACTC920RET_RelatConclcRecsdComplexType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+		            	Grupo Relatório Conciliação Recusado
+		          	</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC920RET_RelatConclcActoComplexType">
+	    <xs:sequence>
+	    	<xs:element name="IdentdPartAdmdo" type="CNPJBase">
+		        <xs:annotation>
+		        	<xs:documentation>
+		            	Identificador do participante administrado
+		          	</xs:documentation>
+		    	</xs:annotation>
+		    </xs:element>
+		    <xs:element name="NumCtrlIF" type="ControleIF">
+		        <xs:annotation>
+		        	<xs:documentation>
+		            	Número Controle IF
+		          	</xs:documentation>
+		    	</xs:annotation>
+		    </xs:element>
+		    <xs:element name="NumCtrlCIP" type="ControleIF">
+		        <xs:annotation>
+		        	<xs:documentation>
+		            	Número Controle CIP
+		          	</xs:documentation>
+		    	</xs:annotation>
+		    </xs:element>
+		    <xs:element name="DtSolictc" type="Data">
+		        <xs:annotation>
+		        	<xs:documentation>
+		            	Data da Solicitação
+		          	</xs:documentation>
+		    	</xs:annotation>
+		    </xs:element>
+		    <xs:element name="SitSolictc" type="SitSolictc">
+		        <xs:annotation>
+		        	<xs:documentation>
+		            	Situação da Solicitação
+		          	</xs:documentation>
+		    	</xs:annotation>
+		    </xs:element>
+	    </xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Grupo_ACTC920RET_RelatConclcRecsdComplexType">
+		<xs:sequence>
+	    	<xs:element name="IdentdPartAdmdo" type="CNPJBase_CodErro">
+				<xs:annotation>
+					<xs:documentation>
+						Identificador Participante Administrado 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NumCtrlIF" type="ControleIF_CodErro">
+				<xs:annotation>
+					<xs:documentation>
+						Número Controle IF
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice>
+			    <xs:element name="AnoMesRefApurc" type="AnoMes_CodErro">
+					<xs:annotation>
+						<xs:documentation>
+							Ano/Mês de Referência Apuração	
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			    <xs:element name="Grupo_ACTC920RET_Per_Apurc" type="Grupo_ACTC920RET_Per_ApurcComplexType">
+			    	<xs:annotation>
+						<xs:documentation>
+	           				Grupo Período Apuração
+	          			</xs:documentation>
+					</xs:annotation>
+			    </xs:element>
+			</xs:choice>
+			<xs:element name="TpContrto" type="TpContrto_CodErro" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Tipo Contrato 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TpEnteCons" type="TpEnteCons_CodErro" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Tipo de Ente Consignante
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="CodErro" type="CodErro" use="optional"/>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC920RET_Per_ApurcComplexType">
+		<xs:sequence>
+			<xs:element name="DtIniApurc" type="Data_CodErro">
+				<xs:annotation>
+					<xs:documentation>
+						Data Inicial da Apuração
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DtFimApurc" type="Data_CodErro">
+				<xs:annotation>
+					<xs:documentation>
+						Data Fim da Apuração
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="CodErro" type="CodErro" use="optional"/>
+	</xs:complexType>
+</xs:schema>

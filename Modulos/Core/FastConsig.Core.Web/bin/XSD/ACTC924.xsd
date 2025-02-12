@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ACTC924"
+	xmlns="http://www.cip-bancos.org.br/ARQ/ACTC924.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:cat="http://www.cip-bancos.org.br/catalogomsg"
+	targetNamespace="http://www.cip-bancos.org.br/ARQ/ACTC924.xsd"
+	elementFormDefault="qualified"
+    version="1.11.0">
+	
+	<!-- Definição dos Tipos Globais -->
+	<xs:include schemaLocation="ACTCTIPOS.xsd" />
+	
+	<!-- Definição do ACTCDOC -->
+	<xs:element name="ACTCDOC" type="ACTCDOCComplexType">
+		<xs:annotation>
+			<xs:documentation>
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>	
+
+	<!-- Definição do ACTCDOC do arquivo -->
+	<xs:complexType name="ACTCDOCComplexType">
+		<xs:sequence>
+			<xs:element name="BCARQ" type="BCARQComplexType" />
+			<xs:element name="SISARQ" type="SISARQComplexType" />
+			<xs:element name="ESTARQ" type="ESTARQSimpleType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- Definição do SISARQ do arquivo -->
+	<xs:complexType name="SISARQComplexType">
+		<xs:choice>
+			<xs:element name="ACTC924" type="Grupo_ACTC924_RelatPosAnlComplexType">
+				<xs:annotation>
+					<xs:documentation>
+						<cat:InfMensagem>
+							<cat:Mensagem>CTC Informa Relatório Posição Analítica</cat:Mensagem>
+							<cat:Emissor>CTC</cat:Emissor>
+							<cat:Destinatario>IF</cat:Destinatario>
+						</cat:InfMensagem>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC924_RelatPosAnlComplexType">
+		<xs:sequence>
+			<xs:element name="IdentdPartAdmdo" type="CNPJBase">
+				<xs:annotation>
+					<xs:documentation>
+						Identificador Participante Administrado 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NumCtrlCIP" type="ControleIF">
+				<xs:annotation>
+					<xs:documentation>
+						Número Controle CIP
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SitProc" type="SitProc">
+				<xs:annotation>
+					<xs:documentation>
+						Situação do Processamento
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="Grupo_ACTC924_DadRelatPosAnl" type="Grupo_ACTC924_DadRelatPosAnlComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo de  Dados Relatório Posição Analitica
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC924_DadRelatPosAnlComplexType">
+		<xs:sequence>
+			<xs:element name="DtSolictcPortldd" type="Data">
+				<xs:annotation>
+					<xs:documentation>
+						Data da Solicitação da Portabilidade
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NUPortlddCTC" type="NU">
+				<xs:annotation>
+					<xs:documentation>
+						Número Portabilidade CTC
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SitPortlddCTC" type="SitPortlddCTC">
+				<xs:annotation>
+					<xs:documentation>
+						Situação Portabilidade CTC Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ISPBPropnt" type="CNPJBase">
+				<xs:annotation>
+					<xs:documentation>
+						ISPB Proponente 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="Grupo_ACTC924_PortlddAprovd" type="Grupo_ACTC924_PortlddAprovdComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Portabilidade Aprovada
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="CodContrtoOr" type="CodContrtoOrRelatorio">
+				<xs:annotation>
+					<xs:documentation>
+						Código Contrato Original
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CNPJBase_IFOrContrto" type="CNPJBase">
+				<xs:annotation>
+					<xs:documentation>
+						CNPJ Base IF Credora Original Contrato 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TpContrto" type="TpContrto">
+				<xs:annotation>
+					<xs:documentation>
+						Tipo Contrato 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TpEnteCons" type="TpEnteCons" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Tipo de Ente Consignante
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CNPJCorrespBanc" type="CNPJ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						CNPJ Correspondente Bancário
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Grupo_ACTC924_Cli" type="Grupo_ACTC924_CliComplexType" minOccurs="1" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Cliente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Grupo_ACTC924_Reten" type="Grupo_ACTC924_RetenComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Retenção
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Grupo_ACTC924_DcrsoPrz" type="Grupo_ACTC924_DcrsoPrzComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Decurso de Prazo
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Grupo_ACTC924_Cancelt" type="Grupo_ACTC924_CanceltComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Cancelamento
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Grupo_ACTC924_Liquid" type="Grupo_ACTC924_LiquidComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Liquidação
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Grupo_ACTC924_DevLiquid" type="Grupo_ACTC924_DevLiquidComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Devolução  Liquidação
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Grupo_ACTC924_EftcPortldd" type="Grupo_ACTC924_EftcPortlddComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Efetivação da Portabilidade
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC924_PortlddAprovdComplexType">
+		<xs:sequence>
+			<xs:element name="DtRefSaldDevdrContbPropnt" type="Data" minOccurs="1" maxOccurs="3">
+				<xs:annotation>
+					<xs:documentation>
+						Data Referência Saldo Devedor Contábil Proponente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="VlrSaldDevdrContbPropnt" type="Valor" minOccurs="1" maxOccurs="3">
+				<xs:annotation>
+					<xs:documentation>
+						Valor Saldo Devedor Contábil Proponente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DtRefSaldDevdrContbOrContrto" type="Data" minOccurs="1" maxOccurs="3">
+				<xs:annotation>
+					<xs:documentation>
+						Data Referência Saldo Devedor Contábil do Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="VlrSaldDevdrContbOrContrto" type="Valor" minOccurs="1" maxOccurs="3">
+				<xs:annotation>
+					<xs:documentation>
+						Valor Saldo Devedor Contábil do Originador  
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="VlrSaldDevdrContbAD" type="Valor" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Valor Saldo Devedor Contábil para Proposta AD
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC924_CliComplexType">
+		<xs:sequence>
+			<xs:element name="TpCli" type="TpPessoa">
+				<xs:annotation>
+					<xs:documentation>
+						Tipo Cliente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CNPJ_CPFCli" type="CNPJ_CPF">
+				<xs:annotation>
+					<xs:documentation>
+						CNPJ CPF Cliente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NomCli" type="Nome">
+				<xs:annotation>
+					<xs:documentation>
+						Nome Cliente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TelCli" type="Telefone">
+				<xs:annotation>
+					<xs:documentation>
+						Telefone Cliente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EmailCli" type="Email" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						E-mail Cliente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LogradEndCli" type="Texto" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Logradouro Endereço Cliente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CompEndCli" type="Texto" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Complemento Endereço Cliente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NumEndCli" type="NumEnd" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Número Endereço Cliente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CidEndCli" type="CidEnd" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Cidade Endereço Cliente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UFEndCli" type="UF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						UF Endereço Cliente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CEPEndCli" type="CEP" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						CEP Endereço Cliente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Grupo_ACTC924_RetenComplexType">
+		<xs:sequence>
+			<xs:element name="DtRetenContrto" type="Data">
+				<xs:annotation>
+					<xs:documentation>
+						Data Retenção Contrato
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MtvRetenContrto" type="MtvRetenContrto">
+				<xs:annotation>
+					<xs:documentation>
+						Motivo Retenção Contrato
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TpContrtoOr" type="TpContrto" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Tipo Contrato Original
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CPF_Titlar" type="CPF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						CPF Titular
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CondcDivgte" type="CondcDivgte" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Condição Divergente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Grupo_ACTC924_DcrsoPrzComplexType">
+		<xs:sequence>
+			<xs:element name="DtDcrsoPrzPortldd" type="Data">
+				<xs:annotation>
+					<xs:documentation>
+						Data do decurso de prazo
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MtvDcrsoPrzPortldd" type="MtvDcrsoPrzPortldd">
+				<xs:annotation>
+					<xs:documentation>
+						Motivo do decurso de prazo
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Grupo_ACTC924_CanceltComplexType">
+		<xs:sequence>
+			<xs:element name="DtCanceltPortldd" type="Data">
+				<xs:annotation>
+					<xs:documentation>
+						Data Cancelamento Portabilidade
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MtvCanceltPortldd" type="MtvCanceltPortldd">
+				<xs:annotation>
+					<xs:documentation>
+						Motivo Cancelamento Portabilidade
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ISPBSolicttCancel" type="CNPJBase">
+				<xs:annotation>
+					<xs:documentation>
+						ISPB Solicitante Cancelamento
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Grupo_ACTC924_LiquidComplexType">
+		<xs:sequence>
+			<xs:element name="DtLiquidPortldd" type="Data">
+				<xs:annotation>
+					<xs:documentation>
+						Data Liquidação Portabilidade
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SitLiquidPortldd" type="SitLiquidPortldd">
+				<xs:annotation>
+					<xs:documentation>
+						Situação Liquidação da Portabilidade
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="VlrLiquidPortldd" type="Valor" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Valor Liquidação da Portabilidade
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Grupo_ACTC924_DevLiquidComplexType">
+		<xs:sequence>
+			<xs:element name="DtDevLiquidPortldd" type="Data">
+				<xs:annotation>
+					<xs:documentation>
+						Data Devolução Liquidação Portabilidade
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SitDevLiquidPortldd" type="SitDevLiquidPortldd">
+				<xs:annotation>
+					<xs:documentation>
+						Situação Devolução Liquidação da Portabilidade
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MtvDevLiquidPortldd" type="MtvDevLiquidPortldd">
+				<xs:annotation>
+					<xs:documentation>
+						Motivo Devolução Liquidação Portabilidade
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="VlrDevLiquidPortldd" type="Valor">
+				<xs:annotation>
+					<xs:documentation>
+						Valor Devolução Liquidação Portabilidade
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Grupo_ACTC924_EftcPortlddComplexType">
+		<xs:sequence>
+			<xs:element name="DtEftcPortldd" type="Data">
+				<xs:annotation>
+					<xs:documentation>
+						Data Efetivação Portabilidade
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SitEftcPortldd" type="SitEftcPortldd">
+				<xs:annotation>
+					<xs:documentation>
+						Situação Efetivação Portabilidade
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="VlrRCO" type="Valor">
+				<xs:annotation>
+					<xs:documentation>
+						Valor do RCO
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

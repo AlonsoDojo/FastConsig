@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema id="ACTC604"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:cat="http://www.cip-bancos.org.br/catalogomsg"
+	targetNamespace="http://www.cip-bancos.org.br/ARQ/ACTC604.xsd"
+	xmlns="http://www.cip-bancos.org.br/ARQ/ACTC604.xsd"
+	elementFormDefault="qualified"
+    version="1.11.0">
+
+
+	<!-- Definição dos Tipos Globais -->
+	<xs:include schemaLocation="ACTCTIPOS.xsd" />
+
+	<!-- Definição do ACTCDOC do arquivo -->
+	<xs:complexType name="ACTCDOCComplexType">
+		<xs:sequence>
+			<xs:element name="BCARQ" type="BCARQComplexType" />
+			<xs:element name="SISARQ" type="SISARQComplexType" />
+			<xs:element name="ESTARQ" type="ESTARQSimpleType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- Definição do ACTCDOC -->
+	<xs:element name="ACTCDOC" type="ACTCDOCComplexType">
+		<xs:annotation>
+			<xs:documentation>
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<!-- Definição do SISARQ do arquivo -->
+	<xs:complexType name="SISARQComplexType">
+		<xs:choice>
+			<xs:element name="ACTC604" type="ACTC604ComplexType">
+				<xs:annotation>
+					<xs:documentation>
+						<cat:InfMensagem>
+							<cat:Mensagem>
+								CTC informa situação da portabilidade de contrato de cheque especial e/ou adiantamento a depositantes</cat:Mensagem>
+							<cat:Emissor>CTC</cat:Emissor>
+							<cat:Destinatario>IF Proponente e/ou IF Credora Original
+							</cat:Destinatario>
+						</cat:InfMensagem>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="ACTC604ComplexType">
+		<xs:sequence>
+			<xs:element name="Grupo_ACTC604_Portldd" type="Grupo_ACTC604_PortlddComplexType" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Grupo_ACTC604_PortlddComplexType">
+		<xs:sequence>
+			<xs:element name="IdentdPartAdmdo" type="CNPJBase">
+				<xs:annotation>
+					<xs:documentation>
+						Identificador do participante administrado
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NUPortlddCTC" type="NU">
+				<xs:annotation>
+					<xs:documentation>
+						Número da portabilidade no CTC
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice>
+				<xs:element name="Grupo_ACTC604_PortlddAprovd" type="Grupo_ACTC604_PortlddAprovdComplexType">
+					<xs:annotation>
+						<xs:documentation>
+							Grupo para portabilidade aprovada
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Grupo_ACTC604_PortlddRetd" type="Grupo_PortlddRetd_ComplexType">
+					<xs:annotation>
+						<xs:documentation>
+							Grupo para portabilidade retida
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Grupo_ACTC604_PortlddCancel" type="Grupo_PortlddCancel_ComplexType">
+					<xs:annotation>
+						<xs:documentation>
+							Grupo Portabilidade Contrato Cancelada
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Grupo_ACTC604_SitLiquidPortldd" type="Grupo_SitLiquidPortldd_ComplexType">
+					<xs:annotation>
+						<xs:documentation>
+							Grupo Situação Liquidação Portabilidade Contrato
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Grupo_ACTC604_EftcPortldd" type="Grupo_EftcPortldd_ComplexType">
+					<xs:annotation>
+						<xs:documentation>
+							Grupo Efetivação Portabilidade
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType
+		name="Grupo_ACTC604_PortlddAprovdComplexType">
+		<xs:sequence>
+			<xs:element name="CodContrtoOr" type="CodContrtoOr">
+				<xs:annotation>
+					<xs:documentation>
+						Código Contrato Original
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CodContrtoSCR" type="CodContrtoSCR">
+				<xs:annotation>
+					<xs:documentation>
+						Código Contrato SCR
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IPOC" type="IPOC">
+				<xs:annotation>
+					<xs:documentation>
+						Identificador Padronizado de Operações de Crédito
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Ind_MultIPOC" type="Indr">
+				<xs:annotation>
+					<xs:documentation>
+						Indicador de mais de um IPOC por contrato
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CNPJBase_IFOrContrto" type="CNPJBase">
+				<xs:annotation>
+					<xs:documentation>
+						CNPJ Base da IF originadora do Contrato
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TpContrto" type="TpContrto">
+				<xs:annotation>
+					<xs:documentation>
+						Tipo Contrato
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TpCt" type="TpCt">
+				<xs:annotation>
+					<xs:documentation>
+						Tipo de Conta
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AgCli" type="Agencia" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Agência do cliente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CtCli" type="CtBancaria" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Conta corrente do cliente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CtPagto" type="CtPagto" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Conta pagamento
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CtConjtaSoldria" type="CtConjtaSoldria">
+				<xs:annotation>
+					<xs:documentation>
+						Conta Conjunta Solidária
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DtRefSaldDevdrContb" type="Data">
+				<xs:annotation>
+					<xs:documentation>
+						Data Referência Saldo Devedor Contábil
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="VlrMaxCob" type="Valor" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Valor Máximo de Cobertura
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SitContrto" type="SitContrto">
+				<xs:annotation>
+					<xs:documentation>
+						Situação do contrato
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="QtdDiasAtr" type="Qtd">
+				<xs:annotation>
+					<xs:documentation>
+						Quantidade de dias em atraso
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Grupo_ACTC604_CheqEspcl" type="Grupo_ACTCX03_CheqEspclComplexType">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Cheque Especial
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Grupo_ACTC604_AdintDpsitante" type="Grupo_ACTCX03_AdintDpsitanteComplexType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Adiantamento a Depositante
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IOFAlqContrtoOrigBas" type="Percentual_CodErro">
+				<xs:annotation>
+					<xs:documentation>
+						Alíquota IOF Diário (básico) Contratação
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IOFAlqContrtoOrigAdc" type="Percentual_CodErro">
+				<xs:annotation>
+					<xs:documentation>
+						Alíquota IOF Adicional Contratação
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CodMoeda" type="CodMoeda">
+				<xs:annotation>
+					<xs:documentation>
+						Código Moeda Contrato
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CNPJIFOrigdr" type="CNPJ">
+				<xs:annotation>
+					<xs:documentation>
+						CNPJ IF Credora Original
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ISPBBcoIFOrigdr" type="CNPJBase">
+				<xs:annotation>
+					<xs:documentation>
+						ISPB Banco IF Credora Original
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CodBcoIFOrigdr" type="CodIF">
+				<xs:annotation>
+					<xs:documentation>
+						Código Banco IF Credora Original
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AgBancIFOrigdr" type="Agencia">
+				<xs:annotation>
+					<xs:documentation>
+						Agência Bancária IF Credora Original
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CtBancIFOrigdr" type="CtBancaria" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Conta Bancária IF Credora Original
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

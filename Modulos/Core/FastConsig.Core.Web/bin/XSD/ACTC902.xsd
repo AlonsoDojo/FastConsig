@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ACTC902"
+		   xmlns="http://www.cip-bancos.org.br/ARQ/ACTC902.xsd"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   xmlns:cat="http://www.cip-bancos.org.br/catalogomsg"
+		   targetNamespace="http://www.cip-bancos.org.br/ARQ/ACTC902.xsd"
+		   elementFormDefault="qualified"
+           version="1.11.0">
+
+	<!-- Definição dos Tipos Globais -->
+	<xs:include schemaLocation="ACTCTIPOS.xsd" />
+
+	<!-- Definição do ACTCDOC do arquivo -->
+	<xs:complexType name="ACTCDOCComplexType">
+		<xs:sequence>
+			<xs:element name="BCARQ" type="BCARQComplexType" />
+			<xs:element name="SISARQ" type="SISARQComplexType" />
+			<xs:element name="ESTARQ" type="ESTARQSimpleType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- Definição do ACTCDOC -->
+	<xs:element name="ACTCDOC" type="ACTCDOCComplexType">
+		<xs:annotation>
+			<xs:documentation>
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<!-- Definição do SISARQ do arquivo -->
+	<xs:complexType name="SISARQComplexType">
+		<xs:choice>
+			<xs:element name="ACTC902" type="ACTC902ComplexType">
+				<xs:annotation>
+					<xs:documentation>
+						<cat:InfMensagem>
+							<cat:Mensagem>IF credora original informa liquidação da portabilidade</cat:Mensagem>
+							<cat:Emissor>IF Credora Orignal</cat:Emissor>
+							<cat:Destinatario>CTC</cat:Destinatario>
+						</cat:InfMensagem>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ACTC902RET" type="ACTC902RETComplexType">
+				<xs:annotation>
+					<xs:documentation>
+						<cat:InfMensagem>
+							<cat:Mensagem>CTC informa resposta de liquidação da portabilidade</cat:Mensagem>
+							<cat:Emissor>CTC</cat:Emissor>
+							<cat:Destinatario>IF Credora Orignal</cat:Destinatario>
+						</cat:InfMensagem>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="ACTC902ComplexType">
+		<xs:sequence>
+			<xs:element name="Grupo_ACTC902_LiquidPortldd" type="Grupo_ACTC902_LiquidPortlddComplexType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Grupo_ACTC902_LiquidPortlddComplexType">
+		<xs:sequence>
+			<xs:element name="IdentdPartAdmdo" type="CNPJBase">
+				<xs:annotation>
+					<xs:documentation>
+						Identificador do participante administrado
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NUPortlddCTC" type="NU">
+				<xs:annotation>
+					<xs:documentation>
+						Número da portabilidade no CTC
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DtLiquidPortldd" type="Data">
+				<xs:annotation>
+					<xs:documentation>
+						Data Liquidação Portabilidade
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Ind_AutTrocaGarantia" type="Indr_CodErro" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Indicador de Autorização da Troca de Garantia
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ACTC902RETComplexType">
+		<xs:sequence>
+			<xs:element name="Grupo_ACTC902RET_LiquidPortlddActo" type="Grupo_ACTC902RET_LiquidPortlddActoComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Liquidação Portabilidade Aceito
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Grupo_ACTC902RET_LiquidPortlddRecsd" type="Grupo_ACTC902RET_LiquidPortlddRecsdComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Liquidação Portabilidade Recusado
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Grupo_ACTC902RET_LiquidPortlddRecsdComplexType">
+		<xs:sequence>
+			<xs:element name="IdentdPartAdmdo" type="CNPJBase_CodErro">
+				<xs:annotation>
+					<xs:documentation>
+						Identificador do participante administrado
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NUPortlddCTC" type="NU_CodErro">
+				<xs:annotation>
+					<xs:documentation>
+						Número da portabilidade no CTC
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DtLiquidPortldd" type="Data_CodErro">
+				<xs:annotation>
+					<xs:documentation>
+						Data Liquidação Portabilidade
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Ind_AutTrocaGarantia" type="Indr_CodErro" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Indicador de Autorização da Troca de Garantia
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="CodErro" type="CodErro" use="optional"/>
+	</xs:complexType>
+
+	<xs:complexType name="Grupo_ACTC902RET_LiquidPortlddActoComplexType">
+		<xs:sequence>
+			<xs:element name="IdentdPartAdmdo" type="CNPJBase">
+				<xs:annotation>
+					<xs:documentation>
+						Identificador do participante administrado
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NUPortlddCTC" type="NU">
+				<xs:annotation>
+					<xs:documentation>
+						Número Portabilidade CTC
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Ind_AutTrocaGarantia" type="Indr_CodErro" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Indicador de Autorização da Troca de Garantia
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

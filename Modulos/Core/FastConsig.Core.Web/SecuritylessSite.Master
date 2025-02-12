@@ -1,0 +1,198 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SecuritylessSite.Master.cs" Inherits="FastConsig.Core.Web.SecuritylessSite" %>
+
+<%@ Register Assembly="Framework" Namespace="Framework.Web.UI.Controls" TagPrefix="fmk" %>
+<!DOCTYPE html>
+<html lang="PT-br">
+<head runat="server">
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>Fast Consig</title>
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+          <script src="/scripts/html5shiv.min.js"></script>
+          <script src="/scripts/respond.min.js"></script>
+    <![endif]-->
+
+   <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+   <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+   <link href="/css/icons.min.css" rel="stylesheet" type="text/css">
+   <link href="/css/app.min.css" rel="stylesheet" type="text/css">
+
+   <style type="text/css">
+      .wait-border {
+         width: 128px;
+         height: 128px;
+         border-radius: 50%;
+         overflow: hidden;
+         border: 5px solid #EFEFEF; /* #FFF; */
+         border-radius: 100%;
+         box-shadow: 0 10px 10px rgba(0,0,0,0.4);
+         background-color: #EEEEEE; /* #FFF; */
+         position: relative;
+         margin: 0;
+      }
+
+      .wait {
+         width: 128px;
+         height: 128px;
+         border-radius: 50%;
+         overflow: hidden;
+         margin: -5px 0 0 -5px;
+      }
+   </style>
+</head>
+<body class="authentication-bg">
+   <form runat="server">
+      <asp:ScriptManager ID="ScriptManager" LoadScriptsBeforeUI="true" EnableScriptGlobalization="true"
+         EnableScriptLocalization="true" EnablePageMethods="True" AsyncPostBackTimeout="3000" runat="server" />
+
+      <fmk:CustomModalUpdateProgress ID="updProgress" runat="server" DisplayAfter="5" BackgroundCssClass="FundoPopup">
+         <ProgressTemplate>
+            <div class="wait-border">
+               <div class="wait">
+                  <asp:Image ID="imgAguarde" ImageUrl="~/Imagens/ajax-loader.gif" runat="server" />
+               </div>
+            </div>
+         </ProgressTemplate>
+      </fmk:CustomModalUpdateProgress>
+
+      <asp:UpdatePanel ID="UpdatePanelMenu" runat="server" RenderMode="Block" UpdateMode="Always">
+         <ContentTemplate>
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="false" ShowSummary="false" />
+            <div style="margin: 10px">
+               <asp:PlaceHolder ID="phMensagem" runat="server"></asp:PlaceHolder>
+            </div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+
+            <!--Load JQuery-->
+            <script src="/scripts/jquery.min.js"></script>
+            <script src="/scripts/bootstrap.bundle.min.js"></script>
+            <script src="/scripts/metisMenu.min.js"></script>
+            <script src="/scripts/simplebar.min.js"></script>
+            <script src="/scripts/waves.min.js"></script>
+            <script src="/scripts/jquery.waypoints.min.js"></script>
+            <script src="/scripts/jquery.counterup.min.js"></script>
+            <script src="/scripts/bootstrap.min.js"></script>
+
+            <script type="text/javascript">
+               function PostBackBlank(eventName) {
+                  document.forms[0].target = '_blank';
+                  document.forms[0].__EVENTTARGET.value = '__Page';
+                  document.forms[0].__EVENTARGUMENT.value = eventName;
+                  document.forms[0].submit();
+                  document.forms[0].target = '';
+               }
+            </script>
+
+            <asp:ContentPlaceHolder ID="ScriptContent" runat="server"></asp:ContentPlaceHolder>
+
+            <script type="text/javascript">
+               function ValidationSummaryOnSubmit(summary) {
+                  var count = 0;
+                  var status = true;
+                  for (i = 0; i < Page_Validators.length; i++) {
+
+                     if (!Page_Validators[i].isvalid) {
+
+                        var contents = 'Existem campos com valores inválidos ou não preenchidos na tela, por favor verifique.';
+                        ShowMessage(contents);
+                        ScrollUp();
+
+                        //var div = $('<div class="alert message errormsg">' + contents + '</div>');
+                        ////div.insertBefore($get('msg').firstChild);
+                        //$('#msg').empty();
+                        //$('#msg').append(div);
+                        try {
+                           $('#' + Page_Validators[i].id).empty();
+                           $('#' + Page_Validators[i].id).append('<img src="/Imagens/erro_validacao.png"/>');
+                           $('#' + Page_Validators[i].id).show();
+                        } catch (e) { }
+
+                        $(".alert").click(function () {
+                           $(this).fadeOut('slow');
+                        });
+                        //Deixa rodar todos os campos da tela...
+                        //break;
+                        status = false;
+                     } else {
+                        try {
+                           $('#' + Page_Validators[i].id).hide();
+                        } catch (e) { }
+                     }
+                  }
+                  try {
+                     if (typeof ValidarPaginaJs != 'undefined' && $.isFunction(ValidarPaginaJs)) {
+                        customStatus = ValidarPaginaJs();
+                        if (!customStatus) {
+                           ScrollUp();
+                           status = customStatus;
+                           //Chama novamente a checagem dos validadores do ASP.NET...
+                           ValidatorUpdateIsValid();
+                        }
+                     }
+                  } catch (e) { }
+                  return status;
+               }
+
+               function ShowMessage(contents) {
+
+                  var div = $('<div class="alert alert-danger alert-dismissible">' + contents + '</div>');
+                  $('#msg').empty();
+                  $('#msg').append(div);
+               }
+
+               function ScrollUp() {
+                  var whereToMove = $("#topOfPage").position().top;
+                  $("html,body").animate({ scrollTop: whereToMove }, 200);
+               }
+
+               Sys.Browser.WebKit = {}; //Safari 3 is considered WebKit
+               if (navigator.userAgent.indexOf('WebKit/') > -1) {
+                  Sys.Browser.agent = Sys.Browser.WebKit;
+                  Sys.Browser.version = parseFloat(navigator.userAgent.match(/WebKit\/(\d+(\.\d+)?)/)[1]);
+                  Sys.Browser.name = 'WebKit';
+               }
+
+               var prm = Sys.WebForms.PageRequestManager.getInstance();
+               prm.add_endRequest(function () {
+                  StartupJs();
+               });
+
+               $(document).ready(function () {
+                  StartupJs();
+               });
+
+               function StartupJs() {
+
+                  $(function () {
+                     $('[data-toggle="tooltip"]').tooltip()
+                  });
+
+                  $(window).scroll(function () {
+                     var height = $(window).scrollTop();
+                     if (height > 250) {
+                        $('#back2Top').fadeIn();
+                     } else {
+                        $('#back2Top').fadeOut();
+                     }
+                  });
+
+                  $("#back2Top").click(function (event) {
+                     event.preventDefault();
+                     ScrollUp();
+                     return false;
+                  });
+
+                  if (typeof StartupPaginaJs != 'undefined' && $.isFunction(StartupPaginaJs)) {
+                     StartupPaginaJs();
+                  }
+               }
+            </script>
+         </ContentTemplate>
+      </asp:UpdatePanel>
+   </form>
+</body>
+</html>

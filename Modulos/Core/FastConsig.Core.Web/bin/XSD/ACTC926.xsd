@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ACTC926"
+	xmlns="http://www.cip-bancos.org.br/ARQ/ACTC926.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:cat="http://www.cip-bancos.org.br/catalogomsg"
+	targetNamespace="http://www.cip-bancos.org.br/ARQ/ACTC926.xsd"
+	elementFormDefault="qualified"
+    version="1.11.0">
+	
+	<!-- Definição dos Tipos Globais -->
+	<xs:include schemaLocation="ACTCTIPOS.xsd" />
+
+	<!-- Definição do ACTCDOC -->
+	<xs:element name="ACTCDOC" type="ACTCDOCComplexType">
+		<xs:annotation>
+			<xs:documentation>
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>	
+
+	<!-- Definição do ACTCDOC do arquivo -->
+	<xs:complexType name="ACTCDOCComplexType">
+		<xs:sequence>
+			<xs:element name="BCARQ" type="BCARQComplexType" />
+			<xs:element name="SISARQ" type="SISARQComplexType" />
+			<xs:element name="ESTARQ" type="ESTARQSimpleType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- Definição do SISARQ do arquivo -->
+	<xs:complexType name="SISARQComplexType">
+		<xs:choice>
+			<xs:element name="ACTC926" type="Grupo_ACTC926_RelcArqProcdComplexType">
+				<xs:annotation>
+					<xs:documentation>
+						<cat:InfMensagem>
+							<cat:Mensagem>CTC Informa Relação de Arquivos Processados</cat:Mensagem>
+							<cat:Emissor>CTC</cat:Emissor>
+							<cat:Destinatario>IF</cat:Destinatario>
+						</cat:InfMensagem>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC926_RelcArqProcdComplexType">
+		<xs:sequence>
+			<xs:element name="IdentdPartPrinc" type="CNPJBase">
+				<xs:annotation>
+					<xs:documentation>
+						Identificador Participante Principal 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NumCtrlCIP" type="ControleIF">
+				<xs:annotation>
+					<xs:documentation>
+						Número Controle CIP
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SitProc" type="SitProc" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Situação do Processamento
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DtRef" type="Data" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Data de Referência	
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DtIniApurc" type="Data" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Data Inicial da Apuração
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DtFimApurc" type="Data" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Data Fim da Apuração
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="Grupo_ACTC926_DadRelcArqProcd" type="Grupo_ACTC926_DadRelcArqProcdComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo de  Dados Relação de Arquivos Processados
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC926_DadRelcArqProcdComplexType">
+		<xs:sequence>
+			<xs:element name="DtRef" type="Data">
+				<xs:annotation>
+					<xs:documentation>
+						Data de Referência 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DtHrProcArq" type="DataHora">
+				<xs:annotation>
+					<xs:documentation>
+						Data Hora processamento
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NomArq" type="Nome">
+				<xs:annotation>
+					<xs:documentation>
+						Nome do Arquivo	
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TpArq" type="TipoArq">
+				<xs:annotation>
+					<xs:documentation>
+						Tipo do Arquivo
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TpArqEnv" type="TipoArquivoEnviado" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Tipo do Arquivo Enviado 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ISPBEmissor" type="CNPJBase">
+				<xs:annotation>
+					<xs:documentation>
+						ISPB Emissor 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ISPBDestinatario" type="CNPJBase">
+				<xs:annotation>
+					<xs:documentation>
+						ISPB Destinatário 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

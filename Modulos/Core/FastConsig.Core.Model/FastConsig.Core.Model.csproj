@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A2DA4310-F0F8-4307-9FB1-353623BF4154}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FastConsig.Core.Model</RootNamespace>
+    <AssemblyName>FastConsig.Core.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Framework, Version=2.1.3.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\FastConsig\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ComboValueBoleanoModel.cs" />
+    <Compile Include="ComboValueModel.cs" />
+    <Compile Include="Exceptions\DataPrevException.cs" />
+    <Compile Include="Exceptions\InformationException.cs" />
+    <Compile Include="Exceptions\INSSException.cs" />
+    <Compile Include="Exceptions\NaoMePerturbeBloqueadoException.cs" />
+    <Compile Include="Exceptions\NaoMePerturbeException.cs" />
+    <Compile Include="Exceptions\SIAPEException.cs" />
+    <Compile Include="Exceptions\ValidacaoDadosException.cs" />
+    <Compile Include="Exceptions\WaitException.cs" />
+    <Compile Include="Interfaces\IIntegracao.cs" />
+    <Compile Include="Interfaces\IPolitica.cs" />
+    <Compile Include="Interfaces\IPoliticaSimulacao.cs" />
+    <Compile Include="Interfaces\IProposta.cs" />
+    <Compile Include="MonitorFiltroModel.cs" />
+    <Compile Include="PessoaModel.cs" />
+    <Compile Include="ProdutoModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropostaBaseModel.cs" />
+    <Compile Include="PropostaModel.cs" />
+    <Compile Include="SimulacaoPropostaModel.cs" />
+    <Compile Include="TemplateEmailModel.cs" />
+    <Compile Include="TipoComunicacaoModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Auditoria\FastConsig.Auditoria.Entity\FastConsig.Auditoria.Entity.csproj">
+      <Project>{1aa4ae28-524a-4a7c-90a4-cbcd598bbc8b}</Project>
+      <Name>FastConsig.Auditoria.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Barramento\FastConsig.Barramento.Model\FastConsig.Barramento.Model.csproj">
+      <Project>{E4FCA5C9-B0EB-4D14-B36D-678527182836}</Project>
+      <Name>FastConsig.Barramento.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Helpers\FastConsig.Common.Helpers\FastConsig.Common.Helpers.csproj">
+      <Project>{F4F27C8F-2767-40BC-A19D-34C08DF2FE40}</Project>
+      <Name>FastConsig.Common.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FastConsig.Core.Entity\FastConsig.Core.Entity.csproj">
+      <Project>{A5163747-E92C-4065-91A6-16F2001E50C4}</Project>
+      <Name>FastConsig.Core.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
