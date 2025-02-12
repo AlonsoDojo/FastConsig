@@ -1,0 +1,13 @@
+C:\Git\FastConsig\Modulos\DataPrev\FastConsig.DataPrev.Data\bin\Debug\FastConsig.DataPrev.Data.dll
+C:\Git\FastConsig\Modulos\DataPrev\FastConsig.DataPrev.Data\bin\Debug\FastConsig.DataPrev.Data.pdb
+C:\Git\FastConsig\Modulos\DataPrev\FastConsig.DataPrev.Data\bin\Debug\FastConsig.DataPrev.Entity.dll
+C:\Git\FastConsig\Modulos\DataPrev\FastConsig.DataPrev.Data\bin\Debug\Framework.dll
+C:\Git\FastConsig\Modulos\DataPrev\FastConsig.DataPrev.Data\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+C:\Git\FastConsig\Modulos\DataPrev\FastConsig.DataPrev.Data\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Git\FastConsig\Modulos\DataPrev\FastConsig.DataPrev.Data\bin\Debug\FastConsig.DataPrev.Entity.pdb
+C:\Git\FastConsig\Modulos\DataPrev\FastConsig.DataPrev.Data\bin\Debug\Microsoft.ReportViewer.WebForms.xml
+C:\Git\FastConsig\Modulos\DataPrev\FastConsig.DataPrev.Data\obj\Debug\FastConsig.DataPrev.Data.csproj.AssemblyReference.cache
+C:\Git\FastConsig\Modulos\DataPrev\FastConsig.DataPrev.Data\obj\Debug\FastConsig.DataPrev.Data.csproj.CoreCompileInputs.cache
+C:\Git\FastConsig\Modulos\DataPrev\FastConsig.DataPrev.Data\obj\Debug\FastCons.D6BBE41B.Up2Date
+C:\Git\FastConsig\Modulos\DataPrev\FastConsig.DataPrev.Data\obj\Debug\FastConsig.DataPrev.Data.dll
+C:\Git\FastConsig\Modulos\DataPrev\FastConsig.DataPrev.Data\obj\Debug\FastConsig.DataPrev.Data.pdb

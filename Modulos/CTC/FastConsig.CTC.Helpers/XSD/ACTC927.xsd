@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ACTC927"
+    xmlns="http://www.cip-bancos.org.br/ARQ/ACTC927.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:cat="http://www.cip-bancos.org.br/catalogomsg"
+    targetNamespace="http://www.cip-bancos.org.br/ARQ/ACTC927.xsd"
+    elementFormDefault="qualified"
+    version="1.11.0">
+
+    <!-- Definição dos Tipos Globais -->
+    <xs:include schemaLocation="ACTCTIPOS.xsd" />
+
+    <!-- Definição do ACTCDOC -->
+    <xs:element name="ACTCDOC" type="ACTCDOCComplexType">
+        <xs:annotation>
+            <xs:documentation>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <!-- Definição do ACTCDOC do arquivo -->
+    <xs:complexType name="ACTCDOCComplexType">
+        <xs:sequence>
+            <xs:element name="BCARQ" type="BCARQComplexType" />
+            <xs:element name="SISARQ" type="SISARQComplexType" />
+            <xs:element name="ESTARQ" type="ESTARQSimpleType" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Definição do SISARQ do arquivo -->
+    <xs:complexType name="SISARQComplexType">
+        <xs:choice>
+            <xs:element name="ACTC927" type="ACTC927ComplexType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:InfMensagem>
+                            <cat:Mensagem>Relatorio de Efetivadas, Retidas e Canceladas</cat:Mensagem>
+                            <cat:Emissor>CTC</cat:Emissor>
+                            <cat:Destinatario>IF</cat:Destinatario>
+                        </cat:InfMensagem>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="ACTC927ComplexType">
+        <xs:sequence>
+            <xs:element name="NumCtrlCIP" type="ControleIF" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Número Controle CIP
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DataInicial" type="Texto">
+                <xs:annotation>
+                    <xs:documentation>
+                        Data Inicial para seleção das portabilidades
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DataFinal" type="Texto">
+                <xs:annotation>
+                    <xs:documentation>
+                        Data Final para seleção das portabilidades
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Grupo_ACTC927_Portabilidade_Efetivada" type="Grupo_ACTC927_PortabilidadeComplexType" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        Portabilidades
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Grupo_ACTC927_Portabilidade_Retida" type="Grupo_ACTC927_PortabilidadeComplexType" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        Portabilidades
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Grupo_ACTC927_Portabilidade_Cancelada" type="Grupo_ACTC927_PortabilidadeComplexType" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        Portabilidades
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Grupo_ACTC927_PortabilidadeComplexType">
+        <xs:sequence>
+            <xs:element name="DtHrOperacao" type="DataHora" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Data Hora da Operacao
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CPF_CNPJ_Cliente" type="CNPJ_CPF_MASK" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        CNPJ ou CPF do cliente
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NuPortabilidade" type="NU" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Numero Portabilidade CTC
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CodigoContratoOriginal" type="CodContrtoOrRelatorio" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Código Contrato Original
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ISPB_IF_Originadora" type="CNPJBase" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        ISPB da IF Originadora
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NomeReduzidoOriginadora" type="Texto" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Nome Reduzido da Originadora
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ISPB_IF_Proponente" type="CNPJBase" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        ISPB da IF Proponente
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NomeReduzidoProponente" type="Texto" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Nome Reduzido da Proponente
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="SituacaoPortabilidade" type="Texto" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Situação da Portabilidade
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DtSituacao" type="Data" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Data da Situação da Portabilidade
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="MtvRetencao" type="MtvRetenContrto" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Motivo da Retenção
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NomeMotivoRetencao" type="Texto" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Nome do Motivo da Retenção
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="MtvCancelamento" type="MtvCanceltPortldd" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Motivo do Cancelamento
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NomeMotivoCancelamento" type="Texto" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Nome do Motivo do Cancelamento
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CNPJ_IF_SolicCancelamento" type="CNPJ" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        CNPJ da IF que Solicitou o Cancelamento
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CodigoTipoContrato" type="TpContrto" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Código do Tipo do Contrato
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DescricaoTipoContrato" type="Texto" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Descricao do Tipo do Contrato
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CodigoTipoContratoProposta" type="TpContrto" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Código do Tipo do Contrato Proposta
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DescricaoTipoContratoProposta" type="Texto_CodErro" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Descricao do Tipo do Contrato Proposta
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CodigoEnteConsignante" type="TpEnteCons" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Código do Ente Consignante
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DescricaoEnteConsignante" type="Texto" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Descricao do Ente Consignante
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CNPJ_CorrespBanc" type="CNPJ" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        CNPJ do Correspondente Bancário
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CEP_EnderecoCliente" type="CEP" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        CEP do Endereço do Cliente
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="QtdTotParcl" type="Qtd" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Quantidade Total de Parcelas
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="QtdTotParclVencr" type="Qtd" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Quantidade Total de Parcelas a Vencer
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="VlrSaldoDevdContb" type="Valor" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Valor do Saldo Devedor Contabil
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="TxJurosNoml" type="Percentual" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Taxa Juros Nominal
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="TxJuros_EFT" type="Percentual" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Taxa Juros EFT
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Tx_CET" type="Percentual" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Taxa CET
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="TxJurosNoml_ContrtoOrig" type="Percentual" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Taxa Juros Nominal Contrato Original
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="TxJuros_EFT_ContrtoOrig" type="Percentual" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Taxa Juros EFT Contrato Original
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Tx_CET_ContrtoOrig" type="Percentual" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Taxa CET Contrato Original
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="VlrFaceParcl" type="Valor" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Valor Face Parcela
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DtVencPrimParcl" type="Data" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Data Vencimento Primeira Parcela
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DtVencUltParcl" type="Data" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Data Vencimento Última Parcela
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DtDigitPropCorrespBanc" type="Data" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        DT_DIGIT_PROPOSTA_COR_BAN
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DtContrOpOrig" type="Data" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        DT_CONTRATACAO_OPERACAO_ORIGINAL
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CanOpOrigem" type="CanalOperacaoOrigem" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        CANAL_OPERACAO_ORIGEM
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CNPJ_CanOrigem" type="CNPJ" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        CNPJ_CANAL_ORIGEM
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,2 @@
+C:\ProgramData\PostSharp\6.10.9\bin.Release\net472\PostSharp.Compiler.Engine.dll
+C:\Git\FastConsig\Modulos\Helpers\FastConsig.Common.Loggin\postsharp.config

@@ -1,0 +1,26 @@
+CREATE TABLE FastConsig.dbo.CTCTipoConta (
+  Id int IDENTITY,
+  Codigo varchar(2) NOT NULL,
+  Descricao varchar(50) NOT NULL,
+  CONSTRAINT PK_CTCTipoConta_Id PRIMARY KEY CLUSTERED (Id)
+)
+ON [PRIMARY]
+GO
+
+CREATE UNIQUE INDEX UK_CTCTipoConta_Codigo
+  ON FastConsig.dbo.CTCTipoConta (Codigo)
+  ON [PRIMARY]
+GO
+
+SET DATEFORMAT ymd
+SET ARITHABORT, ANSI_PADDING, ANSI_WARNINGS, CONCAT_NULL_YIELDS_NULL, QUOTED_IDENTIFIER, ANSI_NULLS, NOCOUNT ON
+SET NUMERIC_ROUNDABORT, IMPLICIT_TRANSACTIONS, XACT_ABORT OFF
+GO
+
+SET IDENTITY_INSERT FastConsig.dbo.CTCTipoConta ON
+GO
+INSERT FastConsig.dbo.CTCTipoConta(Id, Codigo, Descricao) VALUES (1, 'CC', 'Conta Corrente')
+INSERT FastConsig.dbo.CTCTipoConta(Id, Codigo, Descricao) VALUES (2, 'PG', 'Conta de Pagamento')
+GO
+SET IDENTITY_INSERT FastConsig.dbo.CTCTipoConta OFF
+GO

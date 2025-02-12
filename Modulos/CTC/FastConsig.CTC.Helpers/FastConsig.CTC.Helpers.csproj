@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{23C16B1F-FD5C-4860-A88F-3A09FB0AA012}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FastConsig.CTC.Helpers</RootNamespace>
+    <AssemblyName>FastConsig.CTC.Helpers</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Framework, Version=2.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dependencias\Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACTC101\ACTC101Builder.cs" />
+    <Compile Include="ACTC101\ACTC101ERRBuilder.cs" />
+    <Compile Include="ACTC101\ACTC101ERRParser.cs" />
+    <Compile Include="ACTC101\ACTC101ERRProcess.cs" />
+    <Compile Include="ACTC101\ACTC101ERRValidator.cs" />
+    <Compile Include="ACTC101\ACTC101Parser.cs" />
+    <Compile Include="ACTC101\ACTC101PROBuilder.cs" />
+    <Compile Include="ACTC101\ACTC101Process.cs" />
+    <Compile Include="ACTC101\ACTC101PROParser.cs" />
+    <Compile Include="ACTC101\ACTC101PROProcess.cs" />
+    <Compile Include="ACTC101\ACTC101PROValidator.cs" />
+    <Compile Include="ACTC101\ACTC101RETBuilder.cs" />
+    <Compile Include="ACTC101\ACTC101RETParser.cs" />
+    <Compile Include="ACTC101\ACTC101RETProcess.cs" />
+    <Compile Include="ACTC101\ACTC101RETValidator.cs" />
+    <Compile Include="ACTC101\ACTC101Validator.cs" />
+    <Compile Include="ACTC102\ACTC102Builder.cs" />
+    <Compile Include="ACTC102\ACTC102Parser.cs" />
+    <Compile Include="ACTC102\ACTC102Process.cs" />
+    <Compile Include="ACTC102\ACTC102Validator.cs" />
+    <Compile Include="ACTC103\ACTC103Builder.cs" />
+    <Compile Include="ACTC103\ACTC103ERRBuilder.cs" />
+    <Compile Include="ACTC103\ACTC103ERRParser.cs" />
+    <Compile Include="ACTC103\ACTC103ERRProcess.cs" />
+    <Compile Include="ACTC103\ACTC103ERRValidator.cs" />
+    <Compile Include="ACTC103\ACTC103Parser.cs" />
+    <Compile Include="ACTC103\ACTC103PROBuilder.cs" />
+    <Compile Include="ACTC103\ACTC103Process.cs" />
+    <Compile Include="ACTC103\ACTC103PROParser.cs" />
+    <Compile Include="ACTC103\ACTC103PROProcess.cs" />
+    <Compile Include="ACTC103\ACTC103PROValidator.cs" />
+    <Compile Include="ACTC103\ACTC103RETBuilder.cs" />
+    <Compile Include="ACTC103\ACTC103RETParser.cs" />
+    <Compile Include="ACTC103\ACTC103RETProcess.cs" />
+    <Compile Include="ACTC103\ACTC103RETValidator.cs" />
+    <Compile Include="ACTC103\ACTC103Validator.cs" />
+    <Compile Include="ACTC104\ACTC104Builder.cs" />
+    <Compile Include="ACTC104\ACTC104Parser.cs" />
+    <Compile Include="ACTC104\ACTC104Process.cs" />
+    <Compile Include="ACTC104\ACTC104Validator.cs" />
+    <Compile Include="ACTC900\ACTC900Builder.cs" />
+    <Compile Include="ACTC900\ACTC900ERRBuilder.cs" />
+    <Compile Include="ACTC900\ACTC900ERRParser.cs" />
+    <Compile Include="ACTC900\ACTC900ERRProcess.cs" />
+    <Compile Include="ACTC900\ACTC900ERRValidator.cs" />
+    <Compile Include="ACTC900\ACTC900Parser.cs" />
+    <Compile Include="ACTC900\ACTC900PROBuilder.cs" />
+    <Compile Include="ACTC900\ACTC900Process.cs" />
+    <Compile Include="ACTC900\ACTC900PROParser.cs" />
+    <Compile Include="ACTC900\ACTC900PROProcess.cs" />
+    <Compile Include="ACTC900\ACTC900PROValidator.cs" />
+    <Compile Include="ACTC900\ACTC900RETBuilder.cs" />
+    <Compile Include="ACTC900\ACTC900RETParser.cs" />
+    <Compile Include="ACTC900\ACTC900RETProcess.cs" />
+    <Compile Include="ACTC900\ACTC900RETValidator.cs" />
+    <Compile Include="ACTC900\ACTC900Validator.cs" />
+    <Compile Include="ACTC901\ACTC901Builder.cs" />
+    <Compile Include="ACTC901\ACTC901Parser.cs" />
+    <Compile Include="ACTC901\ACTC901Process.cs" />
+    <Compile Include="ACTC901\ACTC901Validator.cs" />
+    <Compile Include="ACTC902\ACTC902Builder.cs" />
+    <Compile Include="ACTC902\ACTC902ERRBuilder.cs" />
+    <Compile Include="ACTC902\ACTC902ERRParser.cs" />
+    <Compile Include="ACTC902\ACTC902ERRProcess.cs" />
+    <Compile Include="ACTC902\ACTC902ERRValidator.cs" />
+    <Compile Include="ACTC902\ACTC902Parser.cs" />
+    <Compile Include="ACTC902\ACTC902PROBuilder.cs" />
+    <Compile Include="ACTC902\ACTC902Process.cs" />
+    <Compile Include="ACTC902\ACTC902PROParser.cs" />
+    <Compile Include="ACTC902\ACTC902PROProcess.cs" />
+    <Compile Include="ACTC902\ACTC902PROValidator.cs" />
+    <Compile Include="ACTC902\ACTC902RETBuilder.cs" />
+    <Compile Include="ACTC902\ACTC902RETParser.cs" />
+    <Compile Include="ACTC902\ACTC902RETProcess.cs" />
+    <Compile Include="ACTC902\ACTC902RETValidator.cs" />
+    <Compile Include="ACTC902\ACTC902Validator.cs" />
+    <Compile Include="ACTC920\ACTC920Builder.cs" />
+    <Compile Include="ACTC920\ACTC920ERRBuilder.cs" />
+    <Compile Include="ACTC920\ACTC920ERRParser.cs" />
+    <Compile Include="ACTC920\ACTC920ERRProcess.cs" />
+    <Compile Include="ACTC920\ACTC920ERRValidator.cs" />
+    <Compile Include="ACTC920\ACTC920Parser.cs" />
+    <Compile Include="ACTC920\ACTC920PROBuilder.cs" />
+    <Compile Include="ACTC920\ACTC920Process.cs" />
+    <Compile Include="ACTC920\ACTC920PROParser.cs" />
+    <Compile Include="ACTC920\ACTC920PROProcess.cs" />
+    <Compile Include="ACTC920\ACTC920PROValidator.cs" />
+    <Compile Include="ACTC920\ACTC920RETBuilder.cs" />
+    <Compile Include="ACTC920\ACTC920RETParser.cs" />
+    <Compile Include="ACTC920\ACTC920RETProcess.cs" />
+    <Compile Include="ACTC920\ACTC920RETValidator.cs" />
+    <Compile Include="ACTC920\ACTC920Validator.cs" />
+    <Compile Include="ACTC921\ACTC921Builder.cs" />
+    <Compile Include="ACTC921\ACTC921Parser.cs" />
+    <Compile Include="ACTC921\ACTC921Process.cs" />
+    <Compile Include="ACTC921\ACTC921Validator.cs" />
+    <Compile Include="ACTC922\ACTC922Builder.cs" />
+    <Compile Include="ACTC922\ACTC922Parser.cs" />
+    <Compile Include="ACTC922\ACTC922Process.cs" />
+    <Compile Include="ACTC922\ACTC922Validator.cs" />
+    <Compile Include="ACTC923\ACTC923Builder.cs" />
+    <Compile Include="ACTC923\ACTC923ERRBuilder.cs" />
+    <Compile Include="ACTC923\ACTC923ERRParser.cs" />
+    <Compile Include="ACTC923\ACTC923ERRProcess.cs" />
+    <Compile Include="ACTC923\ACTC923ERRValidator.cs" />
+    <Compile Include="ACTC923\ACTC923Parser.cs" />
+    <Compile Include="ACTC923\ACTC923PROBuilder.cs" />
+    <Compile Include="ACTC923\ACTC923Process.cs" />
+    <Compile Include="ACTC923\ACTC923PROParser.cs" />
+    <Compile Include="ACTC923\ACTC923PROProcess.cs" />
+    <Compile Include="ACTC923\ACTC923PROValidator.cs" />
+    <Compile Include="ACTC923\ACTC923RETBuilder.cs" />
+    <Compile Include="ACTC923\ACTC923RETParser.cs" />
+    <Compile Include="ACTC923\ACTC923RETProcess.cs" />
+    <Compile Include="ACTC923\ACTC923RETValidator.cs" />
+    <Compile Include="ACTC923\ACTC923Validator.cs" />
+    <Compile Include="ACTC924\ACTC924Builder.cs" />
+    <Compile Include="ACTC924\ACTC924Parser.cs" />
+    <Compile Include="ACTC924\ACTC924Process.cs" />
+    <Compile Include="ACTC924\ACTC924Validator.cs" />
+    <Compile Include="ACTC925\ACTC925Builder.cs" />
+    <Compile Include="ACTC925\ACTC925ERRBuilder.cs" />
+    <Compile Include="ACTC925\ACTC925ERRParser.cs" />
+    <Compile Include="ACTC925\ACTC925ERRProcess.cs" />
+    <Compile Include="ACTC925\ACTC925ERRValidator.cs" />
+    <Compile Include="ACTC925\ACTC925Parser.cs" />
+    <Compile Include="ACTC925\ACTC925PROBuilder.cs" />
+    <Compile Include="ACTC925\ACTC925Process.cs" />
+    <Compile Include="ACTC925\ACTC925PROParser.cs" />
+    <Compile Include="ACTC925\ACTC925PROProcess.cs" />
+    <Compile Include="ACTC925\ACTC925PROValidator.cs" />
+    <Compile Include="ACTC925\ACTC925RETBuilder.cs" />
+    <Compile Include="ACTC925\ACTC925RETParser.cs" />
+    <Compile Include="ACTC925\ACTC925RETProcess.cs" />
+    <Compile Include="ACTC925\ACTC925RETValidator.cs" />
+    <Compile Include="ACTC925\ACTC925Validator.cs" />
+    <Compile Include="ACTC926\ACTC926Builder.cs" />
+    <Compile Include="ACTC926\ACTC926Parser.cs" />
+    <Compile Include="ACTC926\ACTC926Process.cs" />
+    <Compile Include="ACTC926\ACTC926Validator.cs" />
+    <Compile Include="ACTC928\ACTC928Builder.cs" />
+    <Compile Include="ACTC928\ACTC928Parser.cs" />
+    <Compile Include="ACTC928\ACTC928Process.cs" />
+    <Compile Include="ACTC928\ACTC928Validator.cs" />
+    <Compile Include="AGEN001\AGEN001Builder.cs" />
+    <Compile Include="AGEN001\AGEN001ERRBuilder.cs" />
+    <Compile Include="AGEN001\AGEN001ERRParser.cs" />
+    <Compile Include="AGEN001\AGEN001ERRProcess.cs" />
+    <Compile Include="AGEN001\AGEN001ERRValidator.cs" />
+    <Compile Include="AGEN001\AGEN001Parser.cs" />
+    <Compile Include="AGEN001\AGEN001PROBuilder.cs" />
+    <Compile Include="AGEN001\AGEN001Process.cs" />
+    <Compile Include="AGEN001\AGEN001PROParser.cs" />
+    <Compile Include="AGEN001\AGEN001PROProcess.cs" />
+    <Compile Include="AGEN001\AGEN001PROValidator.cs" />
+    <Compile Include="AGEN001\AGEN001Validator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="XSD\ACPOTIPOS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC101.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC101ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC101PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC102.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC103.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC103ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC103PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC104.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC201.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC201ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC201PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC202.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC203.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC203ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC203PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC204.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC301.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC301ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC301PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC302.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC303.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC303ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC303PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC304.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC401.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC401ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC401PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC402.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC403.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC403ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC403PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC404.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC501.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC501ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC501PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC502.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC503.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC503ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC503PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC504.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC601.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC601ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC601PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC602.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC603.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC603ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC603PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC604.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC701.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC701ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC701PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC702.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC703.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC703ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC703PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC704.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC801.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC801ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC801PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC802.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC803.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC803ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC803PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC804.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC851.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC851ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC851PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC852.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC853.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC853ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC853PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC854.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC855.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC855ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC855PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC900.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC900ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC900PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC901.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC902.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC902ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC902PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC920.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC920ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC920PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC921.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC922.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC923.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC923ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC923PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC924.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC925.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC925ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC925PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC926.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC927.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTC928.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACTCTIPOS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\AGEN001.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\AGEN001ERR.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\AGEN001PRO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Helpers\FastConsig.Common.Helpers\FastConsig.Common.Helpers.csproj">
+      <Project>{f4f27c8f-2767-40bc-a19d-34c08df2fe40}</Project>
+      <Name>FastConsig.Common.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Helpers\FastConsig.Common.Loggin\FastConsig.Common.Loggin.csproj">
+      <Project>{C78A7C89-1891-4DA6-870C-434DDF51DC79}</Project>
+      <Name>FastConsig.Common.Loggin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Helpers\FastConsig.Common.Services\FastConsig.Common.Services.csproj">
+      <Project>{40B83122-F530-4F98-90B2-8A5CCA6E2D63}</Project>
+      <Name>FastConsig.Common.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Seguranca\FastConsig.Seguranca.Entity\FastConsig.Seguranca.Entity.csproj">
+      <Project>{c579806d-d2d0-447f-88d3-bfc0a72a3f7a}</Project>
+      <Name>FastConsig.Seguranca.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FastConsig.CTC.Business\FastConsig.CTC.Business.csproj">
+      <Project>{B3897AF4-2186-4E11-9042-68435E763C84}</Project>
+      <Name>FastConsig.CTC.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FastConsig.CTC.Entity\FastConsig.CTC.Entity.csproj">
+      <Project>{21301abe-3ba2-438c-b3d7-4607d05f12b0}</Project>
+      <Name>FastConsig.CTC.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FastConsig.CTC.Model\FastConsig.CTC.Model.csproj">
+      <Project>{82C58777-6363-48B4-86BF-86E16C90B879}</Project>
+      <Name>FastConsig.CTC.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FastConsig.CTC.Services\FastConsig.CTC.Services.csproj">
+      <Project>{A58B5B22-91F7-4F19-961B-0CA93739B8A4}</Project>
+      <Name>FastConsig.CTC.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

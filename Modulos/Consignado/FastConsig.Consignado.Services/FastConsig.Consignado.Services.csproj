@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A2C7E3C1-599B-441D-91B2-7F9B1AAD240A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FastConsig.Consignado.Services</RootNamespace>
+    <AssemblyName>FastConsig.Consignado.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Framework">
+      <HintPath>..\..\..\Dependencias\Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\FastConsig\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConsignadoService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\FastConsig.Core.Model\FastConsig.Core.Model.csproj">
+      <Project>{a2da4310-f0f8-4307-9fb1-353623bf4154}</Project>
+      <Name>FastConsig.Core.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\FastConsig.Core.Services\FastConsig.Core.Services.csproj">
+      <Project>{684e712e-862d-4be2-9e61-0945e4d28d6d}</Project>
+      <Name>FastConsig.Core.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Helpers\FastConsig.Common.Helpers\FastConsig.Common.Helpers.csproj">
+      <Project>{F4F27C8F-2767-40BC-A19D-34C08DF2FE40}</Project>
+      <Name>FastConsig.Common.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Helpers\FastConsig.Common.Loggin\FastConsig.Common.Loggin.csproj">
+      <Project>{C78A7C89-1891-4DA6-870C-434DDF51DC79}</Project>
+      <Name>FastConsig.Common.Loggin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Helpers\FastConsig.Common.Services\FastConsig.Common.Services.csproj">
+      <Project>{40B83122-F530-4F98-90B2-8A5CCA6E2D63}</Project>
+      <Name>FastConsig.Common.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FastConsig.Consignado.Business\FastConsig.Consignado.Business.csproj">
+      <Project>{7fab8b99-f043-4daa-bf17-c8b9536d36c7}</Project>
+      <Name>FastConsig.Consignado.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FastConsig.Consignado.Entity\FastConsig.Consignado.Entity.csproj">
+      <Project>{db353991-2446-45b0-a98e-c36f98091de6}</Project>
+      <Name>FastConsig.Consignado.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FastConsig.Consignado.Model\FastConsig.Consignado.Model.csproj">
+      <Project>{2fed03cc-a718-440b-8495-8cdd0cb9b55c}</Project>
+      <Name>FastConsig.Consignado.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

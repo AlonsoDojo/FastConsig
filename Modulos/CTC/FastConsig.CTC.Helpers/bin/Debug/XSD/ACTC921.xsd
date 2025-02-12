@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ACTC921"
+	xmlns="http://www.cip-bancos.org.br/ARQ/ACTC921.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:cat="http://www.cip-bancos.org.br/catalogomsg"
+	targetNamespace="http://www.cip-bancos.org.br/ARQ/ACTC921.xsd"
+	elementFormDefault="qualified"
+    version="1.11.0">
+	
+	<!-- Definição dos Tipos Globais -->
+	<xs:include schemaLocation="ACTCTIPOS.xsd" />
+	
+	<!-- Definição do ACTCDOC -->
+	<xs:element name="ACTCDOC" type="ACTCDOCComplexType">
+		<xs:annotation>
+			<xs:documentation>
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>	
+
+	<!-- Definição do ACTCDOC do arquivo -->
+	<xs:complexType name="ACTCDOCComplexType">
+		<xs:sequence>
+			<xs:element name="BCARQ" type="BCARQComplexType" />
+			<xs:element name="SISARQ" type="SISARQComplexType" />
+			<xs:element name="ESTARQ" type="ESTARQSimpleType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- Definição do SISARQ do arquivo -->
+	<xs:complexType name="SISARQComplexType">
+		<xs:choice>
+			<xs:element name="ACTC921" type="ACTC921ComplexType">
+				<xs:annotation>
+					<xs:documentation>
+						<cat:InfMensagem>
+							<cat:Mensagem>CTC Informa Relatório de Conciliação de Tarifas</cat:Mensagem>
+							<cat:Emissor>CTC</cat:Emissor>
+							<cat:Destinatario>IF</cat:Destinatario>
+						</cat:InfMensagem>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+
+  <xs:complexType name="ACTC921ComplexType">
+    <xs:sequence>
+      <xs:element name="Grupo_ACTC921_RelatConclcTar" type="Grupo_ACTC921_RelatConclcTarComplexType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            Grupo Relatório Conciliação Tarifa
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC921_RelatConclcTarComplexType">
+		<xs:sequence>
+			<xs:element name="IdentdPartAdmdo" type="CNPJBase">
+				<xs:annotation>
+					<xs:documentation>
+						Identificador Participante Administrado 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NumCtrlCIP" type="ControleIF">
+				<xs:annotation>
+					<xs:documentation>
+						Número Controle CIP
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TpRelat" type="TipoRelatorio">
+				<xs:annotation>
+					<xs:documentation>
+						Tipo de Relatório
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AnoMesRefApurc" type="AnoMes">
+				<xs:annotation>
+					<xs:documentation>
+						Ano/Mês de Referência Apuração	
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DtIniApurc" type="Data">
+				<xs:annotation>
+					<xs:documentation>
+						Data Inicial da Apuração
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DtFimApurc" type="Data">
+				<xs:annotation>
+					<xs:documentation>
+						Data Fim da Apuração
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SitProc" type="SitProc" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Situação do Processamento
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="Grupo_ACTC921_TpContrto" type="Grupo_ACTC921_TpContrtoComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Tipo Contrato                                                                        
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC921_TpContrtoComplexType">
+		<xs:sequence>
+			<xs:element name="TpContrto" type="TpContrto">
+				<xs:annotation>
+					<xs:documentation>
+						Tipo Contrato 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="Grupo_ACTC921_EvtTar" type="Grupo_ACTC921_EvtTarComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Evento Tarifa                                                                       
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC921_EvtTarComplexType">
+		<xs:sequence>
+			<xs:element name="CodEvtTar" type="CodEvtTar">
+				<xs:annotation>
+					<xs:documentation>
+						Código do evento de tarifa
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DtEvtTar" type="Data">
+				<xs:annotation>
+					<xs:documentation>
+						Data do Evento de Tarifa
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NUPortlddCTC" type="NU">
+				<xs:annotation>
+					<xs:documentation>
+						Número Portabilidade CTC
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ISPBPropnt" type="CNPJBase">
+				<xs:annotation>
+					<xs:documentation>
+						ISPB Proponente 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CodContrtoOr" type="CodContrtoOrRelatorio">
+				<xs:annotation>
+					<xs:documentation>
+						Código Contrato Original
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CNPJBase_IFOrContrto" type="CNPJBase">
+				<xs:annotation>
+					<xs:documentation>
+						CNPJ Base IF Credora Original Contrato
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>			
+			<xs:element name="TpEnteCons" type="TpEnteCons" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Tipo de Ente Consignante
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="Grupo_ACTC921_Cli" type="Grupo_ACTC921_CliComplexType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Cliente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC921_CliComplexType">
+		<xs:sequence>
+			<xs:element name="TpCli" type="TpPessoa">
+				<xs:annotation>
+					<xs:documentation>
+						Tipo Cliente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CNPJ_CPFCli" type="CNPJ_CPF">
+				<xs:annotation>
+					<xs:documentation>
+						CNPJ CPF Cliente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NomCli" type="Nome">
+				<xs:annotation>
+					<xs:documentation>
+						Nome Cliente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TelCli" type="Telefone">
+				<xs:annotation>
+					<xs:documentation>
+						Telefone Cliente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EmailCli" type="Email" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						E-mail Cliente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

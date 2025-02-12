@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{21301ABE-3BA2-438C-B3D7-4607D05F12B0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FastConsig.CTC.Entity</RootNamespace>
+    <AssemblyName>FastConsig.CTC.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Framework">
+      <HintPath>..\..\..\Dependencias\Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CTC921.base.cs" />
+    <Compile Include="CTC921.customized.cs" />
+    <Compile Include="CTC921Detalhes.base.cs" />
+    <Compile Include="CTC921Detalhes.customized.cs" />
+    <Compile Include="CTC922.base.cs" />
+    <Compile Include="CTC922.customized.cs" />
+    <Compile Include="CTC922Detalhes.base.cs" />
+    <Compile Include="CTC922Detalhes.customized.cs" />
+    <Compile Include="CTC922TipoParte.base.cs" />
+    <Compile Include="CTC922TipoParte.customized.cs" />
+    <Compile Include="CTC924.base.cs" />
+    <Compile Include="CTC924.customized.cs" />
+    <Compile Include="CTC924Detalhes.base.cs" />
+    <Compile Include="CTC924Detalhes.customized.cs" />
+    <Compile Include="CTC926.base.cs" />
+    <Compile Include="CTC926.customized.cs" />
+    <Compile Include="CTC926Detalhes.base.cs" />
+    <Compile Include="CTC926Detalhes.customized.cs" />
+    <Compile Include="CTC928.base.cs" />
+    <Compile Include="CTC928.customized.cs" />
+    <Compile Include="CTC928ClienteProduto.base.cs" />
+    <Compile Include="CTC928ClienteProduto.customized.cs" />
+    <Compile Include="CTC928Clientes.base.cs" />
+    <Compile Include="CTC928Clientes.customized.cs" />
+    <Compile Include="CTCArquivoRequisicao.base.cs" />
+    <Compile Include="CTCArquivoRequisicao.customized.cs" />
+    <Compile Include="CTCArquivos.base.cs" />
+    <Compile Include="CTCArquivos.customized.cs" />
+    <Compile Include="CTCCanalOperacaoOrigem.base.cs" />
+    <Compile Include="CTCCanalOperacaoOrigem.customized.cs" />
+    <Compile Include="CTCCodigoErro.base.cs" />
+    <Compile Include="CTCCodigoErro.customized.cs" />
+    <Compile Include="CTCCondicaoDivergente.base.cs" />
+    <Compile Include="CTCCondicaoDivergente.customized.cs" />
+    <Compile Include="CTCContaConjutaSolidaria.base.cs" />
+    <Compile Include="CTCContaConjutaSolidaria.customized.cs" />
+    <Compile Include="CTCContas.base.cs" />
+    <Compile Include="CTCContas.customized.cs" />
+    <Compile Include="CTCControleSequenciaAquivos.base.cs" />
+    <Compile Include="CTCControleSequenciaAquivos.customized.cs" />
+    <Compile Include="CTCDominioArquivo.base.cs" />
+    <Compile Include="CTCDominioArquivo.customized.cs" />
+    <Compile Include="CTCEnquadramentoContrato.base.cs" />
+    <Compile Include="CTCEnquadramentoContrato.customized.cs" />
+    <Compile Include="CTCEnteConsignante.base.cs" />
+    <Compile Include="CTCEnteConsignante.customized.cs" />
+    <Compile Include="CTCEventoTarifa.base.cs" />
+    <Compile Include="CTCEventoTarifa.customized.cs" />
+    <Compile Include="CTCFaixasRCO.base.cs" />
+    <Compile Include="CTCFaixasRCO.customized.cs" />
+    <Compile Include="CTCFases.base.cs" />
+    <Compile Include="CTCFases.customized.cs" />
+    <Compile Include="CTCFasesArquivo.base.cs" />
+    <Compile Include="CTCFasesArquivo.customized.cs" />
+    <Compile Include="CTCFasesFluxo.base.cs" />
+    <Compile Include="CTCFasesFluxo.customized.cs" />
+    <Compile Include="CTCFluxoPagamento.base.cs" />
+    <Compile Include="CTCFluxoPagamento.customized.cs" />
+    <Compile Include="CTCIndicador.base.cs" />
+    <Compile Include="CTCIndicador.customized.cs" />
+    <Compile Include="CTCIndicadorRemuneracao.base.cs" />
+    <Compile Include="CTCIndicadorRemuneracao.customized.cs" />
+    <Compile Include="CTCMoeda.base.cs" />
+    <Compile Include="CTCMoeda.customized.cs" />
+    <Compile Include="CTCMotivoCancelamentoPortabilidade.base.cs" />
+    <Compile Include="CTCMotivoCancelamentoPortabilidade.customized.cs" />
+    <Compile Include="CTCMotivoDecursoPrazoPortabilidade.base.cs" />
+    <Compile Include="CTCMotivoDecursoPrazoPortabilidade.customized.cs" />
+    <Compile Include="CTCMotivoDevolucaoLiquidacaoPortabilidade.base.cs" />
+    <Compile Include="CTCMotivoDevolucaoLiquidacaoPortabilidade.customized.cs" />
+    <Compile Include="CTCMotivoRecusaEfetivacaoGarantiaFGO.base.cs" />
+    <Compile Include="CTCMotivoRecusaEfetivacaoGarantiaFGO.customized.cs" />
+    <Compile Include="CTCMotivoRecusaPreReservaGarantiaFGO.base.cs" />
+    <Compile Include="CTCMotivoRecusaPreReservaGarantiaFGO.customized.cs" />
+    <Compile Include="CTCMotivoRetencaoContrato.base.cs" />
+    <Compile Include="CTCMotivoRetencaoContrato.customized.cs" />
+    <Compile Include="CTCOcorrencia.base.cs" />
+    <Compile Include="CTCOcorrencia.customized.cs" />
+    <Compile Include="CTCOrigemRecursos.base.cs" />
+    <Compile Include="CTCOrigemRecursos.customized.cs" />
+    <Compile Include="CTCPagamentosRecebidos.base.cs" />
+    <Compile Include="CTCPagamentosRecebidos.customized.cs" />
+    <Compile Include="CTCPoliticaConfiguracaoExecucao.base.cs" />
+    <Compile Include="CTCPoliticaConfiguracaoExecucao.customized.cs" />
+    <Compile Include="CTCPoliticas.base.cs" />
+    <Compile Include="CTCPoliticas.customized.cs" />
+    <Compile Include="CTCRCO.base.cs" />
+    <Compile Include="CTCRCO.customized.cs" />
+    <Compile Include="CTCRegimeAmortizacao.base.cs" />
+    <Compile Include="CTCRegimeAmortizacao.customized.cs" />
+    <Compile Include="CTCRequisicao.base.cs" />
+    <Compile Include="CTCRequisicao.customized.cs" />
+    <Compile Include="CTCRequisicaoHistorico.base.cs" />
+    <Compile Include="CTCRequisicaoHistorico.customized.cs" />
+    <Compile Include="CTCRequisicaoSimulacao.base.cs" />
+    <Compile Include="CTCRequisicaoSimulacao.customized.cs" />
+    <Compile Include="CTCSituacaoArquivo.base.cs" />
+    <Compile Include="CTCSituacaoArquivo.customized.cs" />
+    <Compile Include="CTCSituacaoContrato.base.cs" />
+    <Compile Include="CTCSituacaoContrato.customized.cs" />
+    <Compile Include="CTCSituacaoEfetivacaoPortabilidade.base.cs" />
+    <Compile Include="CTCSituacaoEfetivacaoPortabilidade.customized.cs" />
+    <Compile Include="CTCSituacaoLiquidacaoPortabilidade.base.cs" />
+    <Compile Include="CTCSituacaoLiquidacaoPortabilidade.customized.cs" />
+    <Compile Include="CTCSituacaoPortabilidade.base.cs" />
+    <Compile Include="CTCSituacaoPortabilidade.customized.cs" />
+    <Compile Include="CTCSituacaoProcessamento.base.cs" />
+    <Compile Include="CTCSituacaoProcessamento.customized.cs" />
+    <Compile Include="CTCSituacaoSolicitacao.base.cs" />
+    <Compile Include="CTCSituacaoSolicitacao.customized.cs" />
+    <Compile Include="CTCTedsRecebidas.base.cs" />
+    <Compile Include="CTCTedsRecebidas.customized.cs" />
+    <Compile Include="CTCTipoArquivo.base.cs" />
+    <Compile Include="CTCTipoArquivo.customized.cs" />
+    <Compile Include="CTCTipoArquivoEnviado.base.cs" />
+    <Compile Include="CTCTipoArquivoEnviado.customized.cs" />
+    <Compile Include="CTCTipoConta.base.cs" />
+    <Compile Include="CTCTipoConta.customized.cs" />
+    <Compile Include="CTCTipoContrato.base.cs" />
+    <Compile Include="CTCTipoContrato.customized.cs" />
+    <Compile Include="CTCTipoContratoOriginal.base.cs" />
+    <Compile Include="CTCTipoContratoOriginal.customized.cs" />
+    <Compile Include="CTCTipoContratoProdutoRetencao.base.cs" />
+    <Compile Include="CTCTipoContratoProdutoRetencao.customized.cs" />
+    <Compile Include="CTCTipoContratoProposta.base.cs" />
+    <Compile Include="CTCTipoContratoProposta.customized.cs" />
+    <Compile Include="CTCTipoEnteConsignante.base.cs" />
+    <Compile Include="CTCTipoEnteConsignante.customized.cs" />
+    <Compile Include="CTCTipoFluxo.base.cs" />
+    <Compile Include="CTCTipoFluxo.customized.cs" />
+    <Compile Include="CTCTipoParte.base.cs" />
+    <Compile Include="CTCTipoParte.customized.cs" />
+    <Compile Include="CTCTipoParteDestino.base.cs" />
+    <Compile Include="CTCTipoParteDestino.customized.cs" />
+    <Compile Include="CTCTipoPessoa.base.cs" />
+    <Compile Include="CTCTipoPessoa.customized.cs" />
+    <Compile Include="CTCTipoRelatorio.base.cs" />
+    <Compile Include="CTCTipoRelatorio.customized.cs" />
+    <Compile Include="CTCTipoRequisicaoSimulacao.base.cs" />
+    <Compile Include="CTCTipoRequisicaoSimulacao.customized.cs" />
+    <Compile Include="CTCTipoTaxa.base.cs" />
+    <Compile Include="CTCTipoTaxa.customized.cs" />
+    <Compile Include="CTCVigenciaFaixasRCO.base.cs" />
+    <Compile Include="CTCVigenciaFaixasRCO.customized.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewCTCFluxoPortabilidade.base.cs" />
+    <Compile Include="ViewCTCFluxoPortabilidade.customized.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

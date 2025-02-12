@@ -1,0 +1,13 @@
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Data\bin\Release\FastConsig.ProfissionaisCertificados.Data.dll
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Data\bin\Release\FastConsig.ProfissionaisCertificados.Data.pdb
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Data\bin\Release\FastConsig.ProfissionaisCertificados.Entity.dll
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Data\bin\Release\Framework.dll
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Data\bin\Release\Microsoft.ReportViewer.WebForms.dll
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Data\bin\Release\Microsoft.ReportViewer.Common.dll
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Data\bin\Release\FastConsig.ProfissionaisCertificados.Entity.pdb
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Data\bin\Release\Microsoft.ReportViewer.WebForms.xml
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Data\obj\Release\FastConsig.ProfissionaisCertificados.Data.csproj.AssemblyReference.cache
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Data\obj\Release\FastConsig.ProfissionaisCertificados.Data.csproj.CoreCompileInputs.cache
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Data\obj\Release\FastCons.0C96C75E.Up2Date
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Data\obj\Release\FastConsig.ProfissionaisCertificados.Data.dll
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Data\obj\Release\FastConsig.ProfissionaisCertificados.Data.pdb

@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FastConsig.Consignado.Model.Serpro
+{
+   public class ContratoRequest
+   {
+      public string CdConsig { get; set; }
+      public string CdSenhaConsig { get; set; }
+      public string NrCpf { get; set; }
+      public string NrContrato { get; set; }
+   }
+}

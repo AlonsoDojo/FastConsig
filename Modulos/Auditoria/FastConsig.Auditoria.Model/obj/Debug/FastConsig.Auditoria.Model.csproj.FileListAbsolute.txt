@@ -1,0 +1,11 @@
+C:\Git\FastConsig\Modulos\Auditoria\FastConsig.Auditoria.Model\bin\Debug\FastConsig.Auditoria.Model.dll
+C:\Git\FastConsig\Modulos\Auditoria\FastConsig.Auditoria.Model\bin\Debug\FastConsig.Auditoria.Model.pdb
+C:\Git\FastConsig\Modulos\Auditoria\FastConsig.Auditoria.Model\bin\Debug\FastConsig.Auditoria.Helpers.dll
+C:\Git\FastConsig\Modulos\Auditoria\FastConsig.Auditoria.Model\bin\Debug\Newtonsoft.Json.dll
+C:\Git\FastConsig\Modulos\Auditoria\FastConsig.Auditoria.Model\bin\Debug\FastConsig.Auditoria.Helpers.pdb
+C:\Git\FastConsig\Modulos\Auditoria\FastConsig.Auditoria.Model\bin\Debug\Newtonsoft.Json.xml
+C:\Git\FastConsig\Modulos\Auditoria\FastConsig.Auditoria.Model\obj\Debug\FastConsig.Auditoria.Model.csproj.AssemblyReference.cache
+C:\Git\FastConsig\Modulos\Auditoria\FastConsig.Auditoria.Model\obj\Debug\FastConsig.Auditoria.Model.csproj.CoreCompileInputs.cache
+C:\Git\FastConsig\Modulos\Auditoria\FastConsig.Auditoria.Model\obj\Debug\FastCons.1185CC71.Up2Date
+C:\Git\FastConsig\Modulos\Auditoria\FastConsig.Auditoria.Model\obj\Debug\FastConsig.Auditoria.Model.dll
+C:\Git\FastConsig\Modulos\Auditoria\FastConsig.Auditoria.Model\obj\Debug\FastConsig.Auditoria.Model.pdb

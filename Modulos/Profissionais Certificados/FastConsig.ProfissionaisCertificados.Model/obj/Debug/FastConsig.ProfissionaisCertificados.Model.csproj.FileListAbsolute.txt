@@ -1,0 +1,6 @@
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Model\bin\Debug\FastConsig.ProfissionaisCertificados.Model.dll
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Model\bin\Debug\FastConsig.ProfissionaisCertificados.Model.pdb
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Model\obj\Debug\FastConsig.ProfissionaisCertificados.Model.csproj.AssemblyReference.cache
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Model\obj\Debug\FastConsig.ProfissionaisCertificados.Model.csproj.CoreCompileInputs.cache
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Model\obj\Debug\FastConsig.ProfissionaisCertificados.Model.dll
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Model\obj\Debug\FastConsig.ProfissionaisCertificados.Model.pdb

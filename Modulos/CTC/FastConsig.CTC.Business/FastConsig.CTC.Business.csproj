@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B3897AF4-2186-4E11-9042-68435E763C84}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FastConsig.CTC.Business</RootNamespace>
+    <AssemblyName>FastConsig.CTC.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Framework">
+      <HintPath>..\..\..\Dependencias\Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CTC921Business.base.cs" />
+    <Compile Include="CTC921Business.customized.cs" />
+    <Compile Include="CTC921DetalhesBusiness.base.cs" />
+    <Compile Include="CTC921DetalhesBusiness.customized.cs" />
+    <Compile Include="CTC922Business.base.cs" />
+    <Compile Include="CTC922Business.customized.cs" />
+    <Compile Include="CTC922DetalhesBusiness.base.cs" />
+    <Compile Include="CTC922DetalhesBusiness.customized.cs" />
+    <Compile Include="CTC922TipoParteBusiness.base.cs" />
+    <Compile Include="CTC922TipoParteBusiness.customized.cs" />
+    <Compile Include="CTC924Business.base.cs" />
+    <Compile Include="CTC924Business.customized.cs" />
+    <Compile Include="CTC924DetalhesBusiness.base.cs" />
+    <Compile Include="CTC924DetalhesBusiness.customized.cs" />
+    <Compile Include="CTC926Business.base.cs" />
+    <Compile Include="CTC926Business.customized.cs" />
+    <Compile Include="CTC926DetalhesBusiness.base.cs" />
+    <Compile Include="CTC926DetalhesBusiness.customized.cs" />
+    <Compile Include="CTC928Business.base.cs" />
+    <Compile Include="CTC928Business.customized.cs" />
+    <Compile Include="CTC928ClienteProdutoBusiness.base.cs" />
+    <Compile Include="CTC928ClienteProdutoBusiness.customized.cs" />
+    <Compile Include="CTC928ClientesBusiness.base.cs" />
+    <Compile Include="CTC928ClientesBusiness.customized.cs" />
+    <Compile Include="CTCArquivoRequisicaoBusiness.base.cs" />
+    <Compile Include="CTCArquivoRequisicaoBusiness.customized.cs" />
+    <Compile Include="CTCArquivosBusiness.base.cs" />
+    <Compile Include="CTCArquivosBusiness.customized.cs" />
+    <Compile Include="CTCCanalOperacaoOrigemBusiness.base.cs" />
+    <Compile Include="CTCCanalOperacaoOrigemBusiness.customized.cs" />
+    <Compile Include="CTCCodigoErroBusiness.base.cs" />
+    <Compile Include="CTCCodigoErroBusiness.customized.cs" />
+    <Compile Include="CTCCondicaoDivergenteBusiness.base.cs" />
+    <Compile Include="CTCCondicaoDivergenteBusiness.customized.cs" />
+    <Compile Include="CTCContaConjutaSolidariaBusiness.base.cs" />
+    <Compile Include="CTCContaConjutaSolidariaBusiness.customized.cs" />
+    <Compile Include="CTCContasBusiness.base.cs" />
+    <Compile Include="CTCContasBusiness.customized.cs" />
+    <Compile Include="CTCControleSequenciaAquivosBusiness.base.cs" />
+    <Compile Include="CTCControleSequenciaAquivosBusiness.customized.cs" />
+    <Compile Include="CTCDominioArquivoBusiness.base.cs" />
+    <Compile Include="CTCDominioArquivoBusiness.customized.cs" />
+    <Compile Include="CTCEnquadramentoContratoBusiness.base.cs" />
+    <Compile Include="CTCEnquadramentoContratoBusiness.customized.cs" />
+    <Compile Include="CTCEnteConsignanteBusiness.base.cs" />
+    <Compile Include="CTCEnteConsignanteBusiness.customized.cs" />
+    <Compile Include="CTCEventoTarifaBusiness.base.cs" />
+    <Compile Include="CTCEventoTarifaBusiness.customized.cs" />
+    <Compile Include="CTCFaixasRCOBusiness.base.cs" />
+    <Compile Include="CTCFaixasRCOBusiness.customized.cs" />
+    <Compile Include="CTCFasesArquivoBusiness.base.cs" />
+    <Compile Include="CTCFasesArquivoBusiness.customized.cs" />
+    <Compile Include="CTCFasesBusiness.base.cs" />
+    <Compile Include="CTCFasesBusiness.customized.cs" />
+    <Compile Include="CTCFasesFluxoBusiness.base.cs" />
+    <Compile Include="CTCFasesFluxoBusiness.customized.cs" />
+    <Compile Include="CTCFluxoPagamentoBusiness.base.cs" />
+    <Compile Include="CTCFluxoPagamentoBusiness.customized.cs" />
+    <Compile Include="CTCIndicadorBusiness.base.cs" />
+    <Compile Include="CTCIndicadorBusiness.customized.cs" />
+    <Compile Include="CTCIndicadorRemuneracaoBusiness.base.cs" />
+    <Compile Include="CTCIndicadorRemuneracaoBusiness.customized.cs" />
+    <Compile Include="CTCMoedaBusiness.base.cs" />
+    <Compile Include="CTCMoedaBusiness.customized.cs" />
+    <Compile Include="CTCMotivoCancelamentoPortabilidadeBusiness.base.cs" />
+    <Compile Include="CTCMotivoCancelamentoPortabilidadeBusiness.customized.cs" />
+    <Compile Include="CTCMotivoDecursoPrazoPortabilidadeBusiness.base.cs" />
+    <Compile Include="CTCMotivoDecursoPrazoPortabilidadeBusiness.customized.cs" />
+    <Compile Include="CTCMotivoDevolucaoLiquidacaoPortabilidadeBusiness.base.cs" />
+    <Compile Include="CTCMotivoDevolucaoLiquidacaoPortabilidadeBusiness.customized.cs" />
+    <Compile Include="CTCMotivoRecusaEfetivacaoGarantiaFGOBusiness.base.cs" />
+    <Compile Include="CTCMotivoRecusaEfetivacaoGarantiaFGOBusiness.customized.cs" />
+    <Compile Include="CTCMotivoRecusaPreReservaGarantiaFGOBusiness.base.cs" />
+    <Compile Include="CTCMotivoRecusaPreReservaGarantiaFGOBusiness.customized.cs" />
+    <Compile Include="CTCMotivoRetencaoContratoBusiness.base.cs" />
+    <Compile Include="CTCMotivoRetencaoContratoBusiness.customized.cs" />
+    <Compile Include="CTCOcorrenciaBusiness.base.cs" />
+    <Compile Include="CTCOcorrenciaBusiness.customized.cs" />
+    <Compile Include="CTCOrigemRecursosBusiness.base.cs" />
+    <Compile Include="CTCOrigemRecursosBusiness.customized.cs" />
+    <Compile Include="CTCPagamentosRecebidosBusiness.base.cs" />
+    <Compile Include="CTCPagamentosRecebidosBusiness.customized.cs" />
+    <Compile Include="CTCPoliticaConfiguracaoExecucaoBusiness.base.cs" />
+    <Compile Include="CTCPoliticaConfiguracaoExecucaoBusiness.customized.cs" />
+    <Compile Include="CTCPoliticasBusiness.base.cs" />
+    <Compile Include="CTCPoliticasBusiness.customized.cs" />
+    <Compile Include="CTCRCOBusiness.base.cs" />
+    <Compile Include="CTCRCOBusiness.customized.cs" />
+    <Compile Include="CTCRegimeAmortizacaoBusiness.base.cs" />
+    <Compile Include="CTCRegimeAmortizacaoBusiness.customized.cs" />
+    <Compile Include="CTCRequisicaoBusiness.base.cs" />
+    <Compile Include="CTCRequisicaoBusiness.customized.cs" />
+    <Compile Include="CTCRequisicaoHistoricoBusiness.base.cs" />
+    <Compile Include="CTCRequisicaoHistoricoBusiness.customized.cs" />
+    <Compile Include="CTCRequisicaoSimulacaoBusiness.base.cs" />
+    <Compile Include="CTCRequisicaoSimulacaoBusiness.customized.cs" />
+    <Compile Include="CTCSituacaoArquivoBusiness.base.cs" />
+    <Compile Include="CTCSituacaoArquivoBusiness.customized.cs" />
+    <Compile Include="CTCSituacaoContratoBusiness.base.cs" />
+    <Compile Include="CTCSituacaoContratoBusiness.customized.cs" />
+    <Compile Include="CTCSituacaoEfetivacaoPortabilidadeBusiness.base.cs" />
+    <Compile Include="CTCSituacaoEfetivacaoPortabilidadeBusiness.customized.cs" />
+    <Compile Include="CTCSituacaoLiquidacaoPortabilidadeBusiness.base.cs" />
+    <Compile Include="CTCSituacaoLiquidacaoPortabilidadeBusiness.customized.cs" />
+    <Compile Include="CTCSituacaoPortabilidadeBusiness.base.cs" />
+    <Compile Include="CTCSituacaoPortabilidadeBusiness.customized.cs" />
+    <Compile Include="CTCSituacaoProcessamentoBusiness.base.cs" />
+    <Compile Include="CTCSituacaoProcessamentoBusiness.customized.cs" />
+    <Compile Include="CTCSituacaoSolicitacaoBusiness.base.cs" />
+    <Compile Include="CTCSituacaoSolicitacaoBusiness.customized.cs" />
+    <Compile Include="CTCTedsRecebidasBusiness.base.cs" />
+    <Compile Include="CTCTedsRecebidasBusiness.customized.cs" />
+    <Compile Include="CTCTipoArquivoBusiness.base.cs" />
+    <Compile Include="CTCTipoArquivoBusiness.customized.cs" />
+    <Compile Include="CTCTipoArquivoEnviadoBusiness.base.cs" />
+    <Compile Include="CTCTipoArquivoEnviadoBusiness.customized.cs" />
+    <Compile Include="CTCTipoContaBusiness.base.cs" />
+    <Compile Include="CTCTipoContaBusiness.customized.cs" />
+    <Compile Include="CTCTipoContratoBusiness.base.cs" />
+    <Compile Include="CTCTipoContratoBusiness.customized.cs" />
+    <Compile Include="CTCTipoContratoOriginalBusiness.base.cs" />
+    <Compile Include="CTCTipoContratoOriginalBusiness.customized.cs" />
+    <Compile Include="CTCTipoContratoProdutoRetencaoBusiness.base.cs" />
+    <Compile Include="CTCTipoContratoProdutoRetencaoBusiness.customized.cs" />
+    <Compile Include="CTCTipoContratoPropostaBusiness.base.cs" />
+    <Compile Include="CTCTipoContratoPropostaBusiness.customized.cs" />
+    <Compile Include="CTCTipoEnteConsignanteBusiness.base.cs" />
+    <Compile Include="CTCTipoEnteConsignanteBusiness.customized.cs" />
+    <Compile Include="CTCTipoFluxoBusiness.base.cs" />
+    <Compile Include="CTCTipoFluxoBusiness.customized.cs" />
+    <Compile Include="CTCTipoParteBusiness.base.cs" />
+    <Compile Include="CTCTipoParteBusiness.customized.cs" />
+    <Compile Include="CTCTipoParteDestinoBusiness.base.cs" />
+    <Compile Include="CTCTipoParteDestinoBusiness.customized.cs" />
+    <Compile Include="CTCTipoPessoaBusiness.base.cs" />
+    <Compile Include="CTCTipoPessoaBusiness.customized.cs" />
+    <Compile Include="CTCTipoRelatorioBusiness.base.cs" />
+    <Compile Include="CTCTipoRelatorioBusiness.customized.cs" />
+    <Compile Include="CTCTipoRequisicaoSimulacaoBusiness.base.cs" />
+    <Compile Include="CTCTipoRequisicaoSimulacaoBusiness.customized.cs" />
+    <Compile Include="CTCTipoTaxaBusiness.base.cs" />
+    <Compile Include="CTCTipoTaxaBusiness.customized.cs" />
+    <Compile Include="CTCVigenciaFaixasRCOBusiness.base.cs" />
+    <Compile Include="CTCVigenciaFaixasRCOBusiness.customized.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewCTCFluxoPortabilidadeBusiness.base.cs" />
+    <Compile Include="ViewCTCFluxoPortabilidadeBusiness.customized.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FastConsig.CTC.Data\FastConsig.CTC.Data.csproj">
+      <Project>{0cbb0a12-06ac-47f3-99e0-0fce2b19cc04}</Project>
+      <Name>FastConsig.CTC.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FastConsig.CTC.Entity\FastConsig.CTC.Entity.csproj">
+      <Project>{21301abe-3ba2-438c-b3d7-4607d05f12b0}</Project>
+      <Name>FastConsig.CTC.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

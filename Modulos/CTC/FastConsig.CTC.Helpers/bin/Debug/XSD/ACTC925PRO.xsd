@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema id="ACTC925PRO"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   targetNamespace="http://www.cip-bancos.org.br/ARQ/ACTC925PRO.xsd"
+		   xmlns="http://www.cip-bancos.org.br/ARQ/ACTC925PRO.xsd"
+		   xmlns:cat="http://www.cip-bancos.org.br/catalogomsg"
+		   elementFormDefault="qualified"
+           version="1.11.0">
+
+	<xs:include schemaLocation="ACTCTIPOS.xsd" />
+
+	<!-- Definição do arquivo -->
+	<xs:element name="ACTCDOC" type="ACTCDOCPROComplexType">
+		<xs:annotation>
+			<xs:documentation>
+				<cat:InfEvento>
+					<cat:Evento>
+			            ACTC925PRO – IF Solicita Relação de Arquivos Processados.
+			        </cat:Evento>
+					<cat:Descricao>
+            			Destinado à IF proponente ou credora original solicitar ao CTC a Relação de Arquivos Processados.
+          			</cat:Descricao>
+					<cat:Observacao>
+					</cat:Observacao>
+					<cat:Servico>
+					</cat:Servico>
+					<cat:TipoFluxo>
+					</cat:TipoFluxo>
+				</cat:InfEvento>
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	
+</xs:schema>

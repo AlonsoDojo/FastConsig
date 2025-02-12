@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema id="ACTC854"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:cat="http://www.cip-bancos.org.br/catalogomsg"
+           targetNamespace="http://www.cip-bancos.org.br/ARQ/ACTC854.xsd"
+           xmlns="http://www.cip-bancos.org.br/ARQ/ACTC854.xsd"
+           elementFormDefault="qualified"
+           version="1.11.0">
+
+    <!-- Definição dos Tipos Globais -->
+    <xs:include schemaLocation="ACTCTIPOS.xsd" />
+
+    <!-- Definição do ACTCDOC do arquivo -->
+    <xs:complexType name="ACTCDOCComplexType">
+        <xs:sequence>
+            <xs:element name="BCARQ" type="BCARQComplexType" />
+            <xs:element name="SISARQ" type="SISARQComplexType" />
+            <xs:element name="ESTARQ" type="ESTARQSimpleType" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Definição do ACTCDOC -->
+    <xs:element name="ACTCDOC" type="ACTCDOCComplexType">
+        <xs:annotation>
+            <xs:documentation>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <!-- Definição do SISARQ do arquivo -->
+    <xs:complexType name="SISARQComplexType">
+        <xs:choice>
+            <xs:element name="ACTC854" type="ACTC854ComplexType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:InfMensagem>
+                            <cat:Mensagem>CTC informa situação da portabilidade de contrato de crédito pessoal</cat:Mensagem>
+                            <cat:Emissor>CTC</cat:Emissor>
+                            <cat:Destinatario>IF Proponente e/ou IF Credora Original</cat:Destinatario>
+                        </cat:InfMensagem>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="ACTC854ComplexType">
+        <xs:sequence>
+            <xs:element name="Grupo_ACTC854_Portldd" type="Grupo_ACTC854_PortlddComplexType" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        Grupo Portabilidade
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Grupo_ACTC854_PortlddComplexType">
+        <xs:sequence>
+            <xs:element name="IdentdPartAdmdo" type="CNPJBase">
+                <xs:annotation>
+                    <xs:documentation>
+                        Identificador do participante administrado
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NUPortlddCTC" type="NU">
+                <xs:annotation>
+                    <xs:documentation>
+                        Número da portabilidade no CTC
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:choice>
+                <xs:element name="Grupo_ACTC854_PortlddAprovd" type="Grupo_ACTC854_PortlddAprovComplexType">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Grupo para portabilidade aprovada
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Grupo_ACTC854_PortlddRetd" type="Grupo_PortlddRetd_ComplexType">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Grupo para portabilidade retida
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Grupo_ACTC854_PortlddCancel" type="Grupo_PortlddCancel_ComplexType">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Grupo Portabilidade Contrato Cancelada
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Grupo_ACTC854_SitLiquidPortldd" type="Grupo_SitLiquidPortldd_ComplexType">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Grupo Situação Liquidação Portabilidade Contrato
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Grupo_ACTC854_ConfirPortldd" type="Grupo_ACTC854_ConfirPortldd_ComplexType">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Grupo Confirmação Portabilidade
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Grupo_ACTC854_EftcPortldd" type="Grupo_ACTC854_EftcPortldd_ComplexType">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Grupo Efetivação Portabilidade
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Grupo_ACTC854_PortlddAprovComplexType">
+        <xs:sequence>
+            <xs:element name="CodContrtoOr" type="CodContrtoOrPronampe">
+                <xs:annotation>
+                    <xs:documentation>
+                        Código Contrato Original
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CodContrtoSCR" type="CodContrtoSCR">
+                <xs:annotation>
+                    <xs:documentation>
+                        Código Contrato SCR
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="IPOC" type="IPOC">
+                <xs:annotation>
+                    <xs:documentation>
+                        Identificador Padronizado de Operações de Crédito
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ind_MultIPOC" type="Indr">
+                <xs:annotation>
+                    <xs:documentation>
+                        Indicador de mais de um IPOC por contrato
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CNPJBase_IFOrContrto" type="CNPJBase">
+                <xs:annotation>
+                    <xs:documentation>
+                        CNPJ Base da IF originadora do Contrato
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="TpContrto" type="TpContrto">
+                <xs:annotation>
+                    <xs:documentation>
+                        Tipo Contrato
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DtContrOp" type="Data">
+                <xs:annotation>
+                    <xs:documentation>
+                        Data Contratação Operação
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DtLibVlrOperContrtoOrig" type="Data">
+                <xs:annotation>
+                    <xs:documentation>
+                        Data Liberação Valores Operação Contrato Original
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DtRefSaldDevdrContb" type="Data">
+                <xs:annotation>
+                    <xs:documentation>
+                        Data Referência Saldo Devedor Contábil
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="VlrSaldDevdrContb" type="Valor">
+                <xs:annotation>
+                    <xs:documentation>
+                        Valor Saldo Devedor Contábil
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="TpTx" type="TpTaxa">
+                <xs:annotation>
+                    <xs:documentation>
+                        Tipo Taxa
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="TxJurosEft" type="Percentual">
+                <xs:annotation>
+                    <xs:documentation>
+                        Taxa Juros Efetiva % a.a.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="TxCET" type="Percentual">
+                <xs:annotation>
+                    <xs:documentation>
+                        Taxa CET
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CodMoeda" type="CodMoeda">
+                <xs:annotation>
+                    <xs:documentation>
+                        Código Moeda Contrato
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="IndRemun" type="IndRemun" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Índice Remuneração
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="RegmAmtzc" type="RegmAmtzc">
+                <xs:annotation>
+                    <xs:documentation>
+                        Regime Amortização
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="QtdTotParclContrto" type="Qtd">
+                <xs:annotation>
+                    <xs:documentation>
+                        Quantidade Total Parcelas Contrato
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="QtdTotParclContrtoVencd" type="Qtd" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Quantidade Total Parcelas Contrato Vencidas
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="QtdTotParclContrtoVencr" type="Qtd">
+                <xs:annotation>
+                    <xs:documentation>
+                        Quantidade Total Parcelas Contrato Vencer
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="FlxPagto" type="FluxoPagto">
+                <xs:annotation>
+                    <xs:documentation>
+                        Fluxo de Pagamento
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Grupo_ACTC854_ParclNorml" type="Grupo_ACTC80X_ParclNormlComplexType" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Grupo Parcela Normal
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Grupo_ACTC854_ParclIrreglr" type="Grupo_ACTC80X_ParclIrreglr_ComplexType" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        Grupo Parcela Irregular
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Grupo_ACTC854_JurCapitalizados" type="Grupo_ACTC85X_JurCapitalizadosComplexType" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        Grupo Juros Capitalizados
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="IOFRecContrtoOrig" type="Valor" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        IOF Recolhido Contrato Original
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="IOFAlqContrtoOrigBas" type="Percentual">
+                <xs:annotation>
+                    <xs:documentation>
+                        Alíquota IOF Diário (básico) Contratação
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="IOFAlqContrtoOrigAdc" type="Percentual">
+                <xs:annotation>
+                    <xs:documentation>
+                        Alíquota IOF Adicional Contratação
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Grupo_ACTC854_LibComp" type="Grupo_ACTC80X_LibComp_ComplexType" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        Grupo Liberação Complementar (Posteriores à Concessão)
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CNPJIFOrigdr" type="CNPJ">
+                <xs:annotation>
+                    <xs:documentation>
+                        CNPJ IF Credora Original
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ISPBBcoIFOrigdr" type="CNPJBase">
+                <xs:annotation>
+                    <xs:documentation>
+                        ISPB Banco IF Credora Original
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CodBcoIFOrigdr" type="CodIF">
+                <xs:annotation>
+                    <xs:documentation>
+                        Código Banco IF Credora Original
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AgBancIFOrigdr" type="Agencia">
+                <xs:annotation>
+                    <xs:documentation>
+                        Agência Bancária IF Credora Original
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CtBancIFOrigdr" type="CtBancaria" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Conta Bancária IF Credora Original
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Grupo_ACTC854_ConfirPortldd_ComplexType">
+        <xs:sequence>
+            <xs:element name="DtConfirPortldd" type="Data">
+                <xs:annotation>
+                    <xs:documentation>
+                        Data Confirmação Portabilidade
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Grupo_ACTC854_EftcPortldd_ComplexType">
+        <xs:sequence>
+            <xs:element name="DtEftcPortldd" type="Data">
+                <xs:annotation>
+                    <xs:documentation>
+                        Data Efetivação Portabilidade
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="SitEftcPortldd" type="SitEftcPortldd">
+                <xs:annotation>
+                    <xs:documentation>
+                        Situação Efetivação Portabilidade
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

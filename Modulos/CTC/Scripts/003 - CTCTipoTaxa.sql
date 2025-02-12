@@ -1,0 +1,27 @@
+CREATE TABLE FastConsig.dbo.CTCTipoTaxa (
+  Id int IDENTITY,
+  Codigo varchar(2) NOT NULL,
+  Descricao varchar(50) NOT NULL,
+  CONSTRAINT PK_CTCTipoTaxa_Id PRIMARY KEY CLUSTERED (Id)
+)
+ON [PRIMARY]
+GO
+
+CREATE UNIQUE INDEX IDX_CTCTipoTaxa_Codigo
+  ON FastConsig.dbo.CTCTipoTaxa (Codigo)
+  ON [PRIMARY]
+GO
+
+SET DATEFORMAT ymd
+SET ARITHABORT, ANSI_PADDING, ANSI_WARNINGS, CONCAT_NULL_YIELDS_NULL, QUOTED_IDENTIFIER, ANSI_NULLS, NOCOUNT ON
+SET NUMERIC_ROUNDABORT, IMPLICIT_TRANSACTIONS, XACT_ABORT OFF
+GO
+
+SET IDENTITY_INSERT FastConsig.dbo.CTCTipoTaxa ON
+GO
+INSERT FastConsig.dbo.CTCTipoTaxa(Id, Codigo, Descricao) VALUES (1, '01', 'Pré-Fixada')
+INSERT FastConsig.dbo.CTCTipoTaxa(Id, Codigo, Descricao) VALUES (2, '02', 'Pós-Fixada')
+INSERT FastConsig.dbo.CTCTipoTaxa(Id, Codigo, Descricao) VALUES (3, '03', 'Ambas')
+GO
+SET IDENTITY_INSERT FastConsig.dbo.CTCTipoTaxa OFF
+GO

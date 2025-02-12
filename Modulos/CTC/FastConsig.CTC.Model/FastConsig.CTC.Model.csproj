@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{82C58777-6363-48B4-86BF-86E16C90B879}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FastConsig.CTC.Model</RootNamespace>
+    <AssemblyName>FastConsig.CTC.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACTC101\ACTC101.cs" />
+    <Compile Include="ACTC101\ACTC101ERR.cs" />
+    <Compile Include="ACTC101\ACTC101PRO.cs" />
+    <Compile Include="ACTC102\ACTC102.cs" />
+    <Compile Include="ACTC103\ACTC103.cs" />
+    <Compile Include="ACTC103\ACTC103ERR.cs" />
+    <Compile Include="ACTC103\ACTC103PRO.cs" />
+    <Compile Include="ACTC104\ACTC104.cs" />
+    <Compile Include="ACTC201\ACTC201.cs" />
+    <Compile Include="ACTC201\ACTC201ERR.cs" />
+    <Compile Include="ACTC201\ACTC201PRO.cs" />
+    <Compile Include="ACTC202\ACTC202.cs" />
+    <Compile Include="ACTC203\ACTC203.cs" />
+    <Compile Include="ACTC203\ACTC203ERR.cs" />
+    <Compile Include="ACTC203\ACTC203PRO.cs" />
+    <Compile Include="ACTC204\ACTC204.cs" />
+    <Compile Include="ACTC301\ACTC301.cs" />
+    <Compile Include="ACTC301\ACTC301ERR.cs" />
+    <Compile Include="ACTC301\ACTC301PRO.cs" />
+    <Compile Include="ACTC302\ACTC302.cs" />
+    <Compile Include="ACTC303\ACTC303.cs" />
+    <Compile Include="ACTC303\ACTC303ERR.cs" />
+    <Compile Include="ACTC303\ACTC303PRO.cs" />
+    <Compile Include="ACTC304\ACTC304.cs" />
+    <Compile Include="ACTC401\ACTC401.cs" />
+    <Compile Include="ACTC401\ACTC401ERR.cs" />
+    <Compile Include="ACTC401\ACTC401PRO.cs" />
+    <Compile Include="ACTC402\ACTC402.cs" />
+    <Compile Include="ACTC403\ACTC403.cs" />
+    <Compile Include="ACTC403\ACTC403ERR.cs" />
+    <Compile Include="ACTC403\ACTC403PRO.cs" />
+    <Compile Include="ACTC404\ACTC404.cs" />
+    <Compile Include="ACTC501\ACTC501.cs" />
+    <Compile Include="ACTC501\ACTC501ERR.cs" />
+    <Compile Include="ACTC501\ACTC501PRO.cs" />
+    <Compile Include="ACTC502\ACTC502.cs" />
+    <Compile Include="ACTC503\ACTC503.cs" />
+    <Compile Include="ACTC503\ACTC503ERR.cs" />
+    <Compile Include="ACTC503\ACTC503PRO.cs" />
+    <Compile Include="ACTC504\ACTC504.cs" />
+    <Compile Include="ACTC601\ACTC601.cs" />
+    <Compile Include="ACTC601\ACTC601ERR.cs" />
+    <Compile Include="ACTC601\ACTC601PRO.cs" />
+    <Compile Include="ACTC602\ACTC602.cs" />
+    <Compile Include="ACTC603\ACTC603.cs" />
+    <Compile Include="ACTC603\ACTC603ERR.cs" />
+    <Compile Include="ACTC603\ACTC603PRO.cs" />
+    <Compile Include="ACTC604\ACTC604.cs" />
+    <Compile Include="ACTC701\ACTC701.cs" />
+    <Compile Include="ACTC701\ACTC701ERR.cs" />
+    <Compile Include="ACTC701\ACTC701PRO.cs" />
+    <Compile Include="ACTC702\ACTC702.cs" />
+    <Compile Include="ACTC703\ACTC703.cs" />
+    <Compile Include="ACTC703\ACTC703ERR.cs" />
+    <Compile Include="ACTC703\ACTC703PRO.cs" />
+    <Compile Include="ACTC704\ACTC704.cs" />
+    <Compile Include="ACTC801\ACTC801.cs" />
+    <Compile Include="ACTC801\ACTC801ERR.cs" />
+    <Compile Include="ACTC801\ACTC801PRO.cs" />
+    <Compile Include="ACTC802\ACTC802.cs" />
+    <Compile Include="ACTC803\ACTC803.cs" />
+    <Compile Include="ACTC803\ACTC803ERR.cs" />
+    <Compile Include="ACTC803\ACTC803PRO.cs" />
+    <Compile Include="ACTC804\ACTC804.cs" />
+    <Compile Include="ACTC851\ACTC851.cs" />
+    <Compile Include="ACTC851\ACTC851ERR.cs" />
+    <Compile Include="ACTC851\ACTC851PRO.cs" />
+    <Compile Include="ACTC852\ACTC852.cs" />
+    <Compile Include="ACTC853\ACTC853.cs" />
+    <Compile Include="ACTC853\ACTC853ERR.cs" />
+    <Compile Include="ACTC853\ACTC853PRO.cs" />
+    <Compile Include="ACTC854\ACTC854.cs" />
+    <Compile Include="ACTC855\ACTC855.cs" />
+    <Compile Include="ACTC855\ACTC855ERR.cs" />
+    <Compile Include="ACTC855\ACTC855PRO.cs" />
+    <Compile Include="ACTC900\ACTC900.cs" />
+    <Compile Include="ACTC900\ACTC900ERR.cs" />
+    <Compile Include="ACTC900\ACTC900PRO.cs" />
+    <Compile Include="ACTC901\ACTC901.cs" />
+    <Compile Include="ACTC902\ACTC902.cs" />
+    <Compile Include="ACTC902\ACTC902ERR.cs" />
+    <Compile Include="ACTC902\ACTC902PRO.cs" />
+    <Compile Include="ACTC920\ACTC920.cs" />
+    <Compile Include="ACTC920\ACTC920ERR.cs" />
+    <Compile Include="ACTC920\ACTC920PRO.cs" />
+    <Compile Include="ACTC921\ACTC921.cs" />
+    <Compile Include="ACTC922\ACTC922.cs" />
+    <Compile Include="ACTC923\ACTC923.cs" />
+    <Compile Include="ACTC923\ACTC923ERR.cs" />
+    <Compile Include="ACTC923\ACTC923PRO.cs" />
+    <Compile Include="ACTC924\ACTC924.cs" />
+    <Compile Include="ACTC925\ACTC925.cs" />
+    <Compile Include="ACTC925\ACTC925ERR.cs" />
+    <Compile Include="ACTC925\ACTC925PRO.cs" />
+    <Compile Include="ACTC926\ACTC926.cs" />
+    <Compile Include="ACTC927\ACTC927.cs" />
+    <Compile Include="ACTC928\ACTC928.cs" />
+    <Compile Include="AGEN001\AGEN001.cs" />
+    <Compile Include="AGEN001\AGEN001ERR.cs" />
+    <Compile Include="AGEN001\AGEN001PRO.cs" />
+    <Compile Include="FiltroMonitorArquivosModel.cs" />
+    <Compile Include="Interfaces\IACTC.cs" />
+    <Compile Include="Interfaces\IACTCBuilder.cs" />
+    <Compile Include="Interfaces\IACTCParser.cs" />
+    <Compile Include="Interfaces\IACTCProcess.cs" />
+    <Compile Include="Interfaces\IACTCValidator.cs" />
+    <Compile Include="Interfaces\IPolicitaCTCArquivo.cs" />
+    <Compile Include="Interfaces\IPoliticaCTCRequisicao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FastConsig.CTC.Entity\FastConsig.CTC.Entity.csproj">
+      <Project>{21301ABE-3BA2-438C-B3D7-4607D05F12B0}</Project>
+      <Name>FastConsig.CTC.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

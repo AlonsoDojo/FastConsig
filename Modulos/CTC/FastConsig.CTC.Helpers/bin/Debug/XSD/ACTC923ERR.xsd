@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ACTC923ERR"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   targetNamespace="http://www.cip-bancos.org.br/ARQ/ACTC923ERR.xsd"
+		   xmlns="http://www.cip-bancos.org.br/ARQ/ACTC923ERR.xsd"
+		   xmlns:cat="http://www.cip-bancos.org.br/catalogomsg"
+		   elementFormDefault="qualified"
+           version="1.11.0">
+
+	<xs:include schemaLocation="ACTCTIPOS.xsd" />
+
+	<!-- Definição do arquivo -->
+	<xs:element name="ACTCDOC" type="ACTCDOCERRComplexType">
+		<xs:annotation>
+			<xs:documentation>
+				<cat:InfEvento>
+					<cat:Evento>ACTC923ERR - CTC informa resultado da solicitação de Relatório de Posição Analítica.</cat:Evento>
+					<cat:Descricao>Destinado ao sistema CTC informar erro no resultado da solicitação de geração do relatório de Posição Analítica</cat:Descricao>
+					<cat:Servico>Erro no arquivo de Relatório de Posição Analítica.</cat:Servico>
+					<cat:TipoFluxo>
+					</cat:TipoFluxo>
+				</cat:InfEvento>
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	
+</xs:schema>

@@ -1,0 +1,11 @@
+C:\Git\FastConsig\Modulos\CTC\FastConsig.CTC.Entity\obj\Debug\FastConsig.CTC.Entity.csproj.AssemblyReference.cache
+C:\Git\FastConsig\Modulos\CTC\FastConsig.CTC.Entity\obj\Debug\FastConsig.CTC.Entity.csproj.CoreCompileInputs.cache
+C:\Git\FastConsig\Modulos\CTC\FastConsig.CTC.Entity\bin\Debug\FastConsig.CTC.Entity.dll
+C:\Git\FastConsig\Modulos\CTC\FastConsig.CTC.Entity\bin\Debug\FastConsig.CTC.Entity.pdb
+C:\Git\FastConsig\Modulos\CTC\FastConsig.CTC.Entity\bin\Debug\Framework.dll
+C:\Git\FastConsig\Modulos\CTC\FastConsig.CTC.Entity\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+C:\Git\FastConsig\Modulos\CTC\FastConsig.CTC.Entity\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Git\FastConsig\Modulos\CTC\FastConsig.CTC.Entity\bin\Debug\Microsoft.ReportViewer.WebForms.xml
+C:\Git\FastConsig\Modulos\CTC\FastConsig.CTC.Entity\obj\Debug\FastCons.173C6220.Up2Date
+C:\Git\FastConsig\Modulos\CTC\FastConsig.CTC.Entity\obj\Debug\FastConsig.CTC.Entity.dll
+C:\Git\FastConsig\Modulos\CTC\FastConsig.CTC.Entity\obj\Debug\FastConsig.CTC.Entity.pdb

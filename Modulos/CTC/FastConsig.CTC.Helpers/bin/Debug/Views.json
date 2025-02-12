@@ -1,0 +1,75 @@
+﻿[
+  {
+    "ViewName": "Departamento",
+    "MaxLength": 0,
+    "ViewDescription": "Cadastro de Departamentos",
+    "ViewEntity": "BancoPaulista.Infraestrutura.Seguranca.Entity.Departamento, BancoPaulista.Infraestrutura.Seguranca.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "ViewBusiness": "BancoPaulista.Infraestrutura.Seguranca.Business.DepartamentoBusiness, BancoPaulista.Infraestrutura.Seguranca.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+  },
+  {
+    "ViewName": "Perfil",
+    "ViewDescription": "Cadastro de Departamentos",
+    "ViewEntity": "BancoPaulista.Infraestrutura.Seguranca.Entity.Perfil, BancoPaulista.Infraestrutura.Seguranca.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "ViewBusiness": "BancoPaulista.Infraestrutura.Seguranca.Business.PerfilBusiness, BancoPaulista.Infraestrutura.Seguranca.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+  },
+  {
+    "ViewName": "Segmento",
+    "ViewDescription": "Cadastro de Segmento",
+    "ViewEntity": "BancoPaulista.CadastroUnico.Entity.Segmento, BancoPaulista.CadastroUnico.Entity, Version=2.0.19.315, Culture=neutral, PublicKeyToken=null",
+    "ViewBusiness": "BancoPaulista.CadastroUnico.Business.SegmentoBusiness, BancoPaulista.CadastroUnico.Business, Version=2.0.19.315, Culture=neutral, PublicKeyToken=null"
+  },
+  {
+    "ViewName": "AtividadeEconomica",
+    "ViewDescription": "Cadastro de Atividade Economica",
+    "ViewEntity": "BancoPaulista.CadastroUnico.Entity.AtividadeEconomica, BancoPaulista.CadastroUnico.Entity, Version=2.0.19.315, Culture=neutral, PublicKeyToken=null",
+    "ViewBusiness": "BancoPaulista.CadastroUnico.Business.AtividadeEconomicaBusiness, BancoPaulista.CadastroUnico.Business, Version=2.0.19.315, Culture=neutral, PublicKeyToken=null"
+  },
+  {
+    "ViewName": "CBO",
+    "ViewDescription": "Cadastro de CBO",
+    "ViewEntity": "BancoPaulista.CadastroUnico.Entity.CBO, BancoPaulista.CadastroUnico.Entity, Version=2.0.19.315, Culture=neutral, PublicKeyToken=null",
+    "ViewBusiness": "BancoPaulista.CadastroUnico.Business.CBOBusiness, BancoPaulista.CadastroUnico.Business, Version=2.0.19.315, Culture=neutral, PublicKeyToken=null"
+  },
+  {
+    "ViewName": "EstadoCivil",
+    "ViewDescription": "Cadastro de Estado Civil",
+    "ViewEntity": "BancoPaulista.CadastroUnico.Entity.EstadoCivil, BancoPaulista.CadastroUnico.Entity, Version=2.0.19.315, Culture=neutral, PublicKeyToken=null",
+    "ViewBusiness": "BancoPaulista.CadastroUnico.Business.EstadoCivilBusiness, BancoPaulista.CadastroUnico.Business, Version=2.0.19.315, Culture=neutral, PublicKeyToken=null"
+  },
+  {
+    "ViewName": "RegimeBens",
+    "ViewDescription": "Cadastro de Regime Bens",
+    "ViewEntity": "BancoPaulista.CadastroUnico.Entity.RegimeBens, BancoPaulista.CadastroUnico.Entity, Version=2.0.19.315, Culture=neutral, PublicKeyToken=null",
+    "ViewBusiness": "BancoPaulista.CadastroUnico.Business.RegimeBensBusiness, BancoPaulista.CadastroUnico.Business, Version=2.0.19.315, Culture=neutral, PublicKeyToken=null"
+  },
+  {
+    "ViewName": "Segmento",
+    "ViewDescription": "Cadastro de Segmento",
+    "ViewEntity": "BancoPaulista.CadastroUnico.Entity.Segmento, BancoPaulista.CadastroUnico.Entity, Version=2.0.19.315, Culture=neutral, PublicKeyToken=null",
+    "ViewBusiness": "BancoPaulista.CadastroUnico.Business.SegmentoBusiness, BancoPaulista.CadastroUnico.Business, Version=2.0.19.315, Culture=neutral, PublicKeyToken=null"
+  },
+  {
+    "ViewName": "TipoEndereco",
+    "ViewDescription": "Cadastro de Tipo de Endereco",
+    "ViewEntity": "BancoPaulista.CadastroUnico.Entity.TipoEndereco, BancoPaulista.CadastroUnico.Entity, Version=2.0.19.315, Culture=neutral, PublicKeyToken=null",
+    "ViewBusiness": "BancoPaulista.CadastroUnico.Business.TipoEnderecoBusiness, BancoPaulista.CadastroUnico.Business, Version=2.0.19.315, Culture=neutral, PublicKeyToken=null"
+  },
+  {
+    "ViewName": "TipoPatrimonio",
+    "ViewDescription": "Cadastro de Tipo de Patrimonio",
+    "ViewEntity": "BancoPaulista.CadastroUnico.Entity.TipoPatrimonio, BancoPaulista.CadastroUnico.Entity, Version=2.0.19.315, Culture=neutral, PublicKeyToken=null",
+    "ViewBusiness": "BancoPaulista.CadastroUnico.Business.TipoPatrimonioBusiness, BancoPaulista.CadastroUnico.Business, Version=2.0.19.315, Culture=neutral, PublicKeyToken=null"
+  },
+  {
+    "ViewName": "TipoRelacionamento",
+    "ViewDescription": "Cadastro de Tipo de Relacionamento",
+    "ViewEntity": "BancoPaulista.CadastroUnico.Entity.TipoRelacionamento, BancoPaulista.CadastroUnico.Entity, Version=2.0.19.315, Culture=neutral, PublicKeyToken=null",
+    "ViewBusiness": "BancoPaulista.CadastroUnico.Business.TipoRelacionamentoBusiness, BancoPaulista.CadastroUnico.Business, Version=2.0.19.315, Culture=neutral, PublicKeyToken=null"
+  },
+  {
+    "ViewName": "TipoRelacionamento",
+    "ViewDescription": "Cadastro de Tipo de Relacionamento",
+    "ViewEntity": "BancoPaulista.CadastroUnico.Entity.TipoRelacionamento, BancoPaulista.CadastroUnico.Entity, Version=2.0.19.315, Culture=neutral, PublicKeyToken=null",
+    "ViewBusiness": "BancoPaulista.CadastroUnico.Business.TipoRelacionamentoBusiness, BancoPaulista.CadastroUnico.Business, Version=2.0.19.315, Culture=neutral, PublicKeyToken=null"
+  }
+]

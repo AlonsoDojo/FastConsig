@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E4FCA5C9-B0EB-4D14-B36D-678527182836}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FastConsig.Barramento.Model</RootNamespace>
+    <AssemblyName>FastConsig.Barramento.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\FastConsig\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BMP\Pessoa\Documento.cs" />
+    <Compile Include="BMP\Pessoa\DocumentoRequest.cs" />
+    <Compile Include="BMP\Pessoa\DocumentoResponse.cs" />
+    <Compile Include="BMP\Pessoa\DtoPessoaRequest.cs" />
+    <Compile Include="BMP\Pessoa\DtoDocumentoRequest.cs" />
+    <Compile Include="BMP\Pessoa\DtoEndereco.cs" />
+    <Compile Include="BMP\Pessoa\DtoEnderecoResponse.cs" />
+    <Compile Include="BMP\Pessoa\EnderecoRequest.cs" />
+    <Compile Include="BMP\Pessoa\EnderecoResponse.cs" />
+    <Compile Include="BMP\Pessoa\MessagePessoaResponse.cs" />
+    <Compile Include="BMP\Pessoa\MessageDocumentoResponse.cs" />
+    <Compile Include="BMP\Pessoa\ParamPessoaResponse.cs" />
+    <Compile Include="BMP\Pessoa\ParamEnderecoResponse.cs" />
+    <Compile Include="BMP\Pessoa\PessoaRequest.cs" />
+    <Compile Include="BMP\Pessoa\PessoaDadoFinanceiro.cs" />
+    <Compile Include="BMP\Pessoa\PessoaDadosContato.cs" />
+    <Compile Include="BMP\Pessoa\PessoaQualificacao.cs" />
+    <Compile Include="BMP\Pessoa\PessoaResponse.cs" />
+    <Compile Include="BMP\Pessoa\Pf.cs" />
+    <Compile Include="BMP\Pessoa\Pj.cs" />
+    <Compile Include="BMP\Proposta\AssinanteRequest.cs" />
+    <Compile Include="BMP\Proposta\AssinaturaRequest.cs" />
+    <Compile Include="BMP\Proposta\AssinaturaResponse.cs" />
+    <Compile Include="BMP\Proposta\Avalista.cs" />
+    <Compile Include="BMP\Proposta\AvalistaPF.cs" />
+    <Compile Include="BMP\Proposta\AvalistaPJ.cs" />
+    <Compile Include="BMP\Proposta\AvalistaRequest.cs" />
+    <Compile Include="BMP\Proposta\AvalistaResponse.cs" />
+    <Compile Include="BMP\Proposta\CancelarPropostaRequest.cs" />
+    <Compile Include="BMP\Proposta\CancelarPropostaResponse.cs" />
+    <Compile Include="BMP\Proposta\ConsultarPropostaRequest.cs" />
+    <Compile Include="BMP\Proposta\ConsultarPropostaResponse.cs" />
+    <Compile Include="BMP\Proposta\ContratoRequest.cs" />
+    <Compile Include="BMP\Proposta\ContratoResponse.cs" />
+    <Compile Include="BMP\Proposta\DadosPagamentoRequest.cs" />
+    <Compile Include="BMP\Proposta\DadosPagamentoResponse.cs" />
+    <Compile Include="BMP\Proposta\Documento.cs" />
+    <Compile Include="BMP\Proposta\DocumentoRequest.cs" />
+    <Compile Include="BMP\Proposta\DocumentoResponse.cs" />
+    <Compile Include="BMP\Proposta\DtoAssinaturaRequest.cs" />
+    <Compile Include="BMP\Proposta\DtoAvalistaRequest.cs" />
+    <Compile Include="BMP\Proposta\DtoCancelarPropostaRequest.cs" />
+    <Compile Include="BMP\Proposta\DtoConsultarPropostaRequest.cs" />
+    <Compile Include="BMP\Proposta\DtoContratoRequest.cs" />
+    <Compile Include="BMP\Proposta\DtoDadosPagamentoRequest.cs" />
+    <Compile Include="BMP\Proposta\DtoDocumentoRequest.cs" />
+    <Compile Include="BMP\Proposta\DtoFinalizarContratoRequest.cs" />
+    <Compile Include="BMP\Proposta\DtoLiberarPagamentoRequest.cs" />
+    <Compile Include="BMP\Proposta\DtoPagtoDadosPagamentoRequest.cs" />
+    <Compile Include="BMP\Proposta\FinalizarContratoRequest.cs" />
+    <Compile Include="BMP\Proposta\FinalizarContratoResponse.cs" />
+    <Compile Include="BMP\Proposta\LiberarPagamentoRequest.cs" />
+    <Compile Include="BMP\Proposta\LiberarPagamentoResponse.cs" />
+    <Compile Include="BMP\Proposta\MessageAssinaturaResponse.cs" />
+    <Compile Include="BMP\Proposta\MessageAvalistaResponse.cs" />
+    <Compile Include="BMP\Proposta\MessageCancelarPropostaResponse.cs" />
+    <Compile Include="BMP\Proposta\MessageConsultarPropostaResponse.cs" />
+    <Compile Include="BMP\Proposta\MessageContratoResponse.cs" />
+    <Compile Include="BMP\Proposta\MessageDadosPagamentoResponse.cs" />
+    <Compile Include="BMP\Proposta\MessageDocumentoResponse.cs" />
+    <Compile Include="BMP\Proposta\MessageFinalizarContratoResponse.cs" />
+    <Compile Include="BMP\Proposta\MessageLiberarPagamentoResponse.cs" />
+    <Compile Include="BMP\Proposta\ParametroAssinaturaResponse.cs" />
+    <Compile Include="BMP\Proposta\ParametroCancelarPropostaRequest.cs" />
+    <Compile Include="BMP\Proposta\ParametroCancelarPropostaResponse.cs" />
+    <Compile Include="BMP\Proposta\ParametroContratoRequest.cs" />
+    <Compile Include="BMP\Proposta\ParametroDadosPagamentoResponse.cs" />
+    <Compile Include="BMP\Proposta\ParametroFinalizarContratoRequest.cs" />
+    <Compile Include="BMP\Proposta\ParametroFinalizarContratoResponse.cs" />
+    <Compile Include="BMP\Proposta\ParametroLiberarPagamentoRequest.cs" />
+    <Compile Include="BMP\Proposta\ParametroLiberarPagamentoResponse.cs" />
+    <Compile Include="BMP\Proposta\PropostaContaPagamentoDTORequest.cs" />
+    <Compile Include="BMP\Proposta\PropostaContaPagamentoResponse.cs" />
+    <Compile Include="BMP\Proposta\PropostaLancamentoRequest.cs" />
+    <Compile Include="BMP\Proposta\PropostaLancamentoResponse.cs" />
+    <Compile Include="CalculoParcelaRequestModel.cs" />
+    <Compile Include="CalculoParcelaResponseErrorModel.cs" />
+    <Compile Include="CalculoParcelaResponseModel.cs" />
+    <Compile Include="ContratosRenegociacaoModel.cs" />
+    <Compile Include="ContratosRenegociacaoResponseModel.cs" />
+    <Compile Include="PrazoTabelaFinanceiraModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TabelaFinanceiraModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BMP\AgendaRecebivel\" />
+    <Folder Include="Sicred\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

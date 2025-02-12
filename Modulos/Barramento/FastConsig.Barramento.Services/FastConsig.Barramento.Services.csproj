@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0897F663-FF35-4296-B07F-8EEFBD5ABEDA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FastConsig.Barramento.Services</RootNamespace>
+    <AssemblyName>FastConsig.Barramento.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Framework">
+      <HintPath>..\..\..\Dependencias\Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BarramentoService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BMP\FastConsig.BMP.Services\FastConsig.BMP.Services.csproj">
+      <Project>{5d0f923e-8a60-474a-aaa7-372db67c00f2}</Project>
+      <Name>FastConsig.BMP.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\FastConsig.Core.Model\FastConsig.Core.Model.csproj">
+      <Project>{A2DA4310-F0F8-4307-9FB1-353623BF4154}</Project>
+      <Name>FastConsig.Core.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Helpers\FastConsig.Common.Loggin\FastConsig.Common.Loggin.csproj">
+      <Project>{C78A7C89-1891-4DA6-870C-434DDF51DC79}</Project>
+      <Name>FastConsig.Common.Loggin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Helpers\FastConsig.Common.Services\FastConsig.Common.Services.csproj">
+      <Project>{40b83122-f530-4f98-90b2-8a5cca6e2d63}</Project>
+      <Name>FastConsig.Common.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Mock\FastConsig.Mock.Services\FastConsig.Mock.Services.csproj">
+      <Project>{cc2cfce3-ef56-4b5b-af54-02ea5f93f5d0}</Project>
+      <Name>FastConsig.Mock.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Seguranca\FastConsig.Seguranca.Entity\FastConsig.Seguranca.Entity.csproj">
+      <Project>{c579806d-d2d0-447f-88d3-bfc0a72a3f7a}</Project>
+      <Name>FastConsig.Seguranca.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sicred\FastConsig.Sicred.Services\FastConsig.Sicred.Services.csproj">
+      <Project>{21365d3c-44cc-429d-a51a-5f62359895b3}</Project>
+      <Name>FastConsig.Sicred.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FastConsig.Barramento.Model\FastConsig.Barramento.Model.csproj">
+      <Project>{e4fca5c9-b0eb-4d14-b36d-678527182836}</Project>
+      <Name>FastConsig.Barramento.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

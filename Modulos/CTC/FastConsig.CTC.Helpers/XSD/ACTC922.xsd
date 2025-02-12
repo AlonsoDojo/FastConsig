@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ACTC922"
+	xmlns="http://www.cip-bancos.org.br/ARQ/ACTC922.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:cat="http://www.cip-bancos.org.br/catalogomsg"
+	targetNamespace="http://www.cip-bancos.org.br/ARQ/ACTC922.xsd"
+	elementFormDefault="qualified"
+    version="1.11.0">
+	
+	<!-- Definição dos Tipos Globais -->
+	<xs:include schemaLocation="ACTCTIPOS.xsd" />
+	
+	<!-- Definição do ACTCDOC -->
+	<xs:element name="ACTCDOC" type="ACTCDOCComplexType">
+		<xs:annotation>
+			<xs:documentation>
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>	
+
+	<!-- Definição do ACTCDOC do arquivo -->
+	<xs:complexType name="ACTCDOCComplexType">
+		<xs:sequence>
+			<xs:element name="BCARQ" type="BCARQComplexType" />
+			<xs:element name="SISARQ" type="SISARQComplexType" />
+			<xs:element name="ESTARQ" type="ESTARQSimpleType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- Definição do SISARQ do arquivo -->
+	<xs:complexType name="SISARQComplexType">
+		<xs:choice>
+			<xs:element name="ACTC922" type="ACTC922ComplexType">
+				<xs:annotation>
+					<xs:documentation>
+						<cat:InfMensagem>
+							<cat:Mensagem>CTC Informa Relatório Posição Gerencial</cat:Mensagem>
+							<cat:Emissor>CTC</cat:Emissor>
+							<cat:Destinatario>IF</cat:Destinatario>
+						</cat:InfMensagem>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+		</xs:choice>
+	</xs:complexType>
+	
+	<xs:complexType name="ACTC922ComplexType">
+		<xs:sequence>
+			<xs:element name="NumCtrlCIP" type="ControleIF">
+				<xs:annotation>
+					<xs:documentation>
+						Número Controle CIP
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DtRef" type="Data">
+				<xs:annotation>
+					<xs:documentation>
+						Data de Referência	
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="Grupo_ACTC922_VisaoOrigdr" type="Grupo_ACTC922_VisaoOrigdrComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Visão Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Grupo_ACTC922_VisaoPropnt" type="Grupo_ACTC922_VisaoPropntComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Visão Proponente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC922_VisaoOrigdrComplexType">
+		<xs:sequence>
+			<xs:element name="IdentdPartAdmdo" type="CNPJBase">
+				<xs:annotation>
+					<xs:documentation>
+						Identificador Participante Administrado 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="Grupo_ACTC922_DadVisaoOrigdr" type="Grupo_ACTC922_DadVisaoOrigdrComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Dados Visão Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC922_DadVisaoOrigdrComplexType">
+		<xs:sequence>
+			<xs:element name="TpContrto" type="TpContrto">
+				<xs:annotation>
+					<xs:documentation>
+						Tipo Contrato 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TpEnteCons" type="TpEnteCons" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Tipo de Ente Consignante
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="Grupo_ACTC922_QtdSitPortlddOrigdr" type="Grupo_ACTC922_QtdSitPortlddOrigdrComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Quantidade Situação Portabilidade Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC922_QtdSitPortlddOrigdrComplexType">
+		<xs:sequence>
+			<xs:element name="SitPortlddCTC" type="SitPortlddCTC">
+				<xs:annotation>
+					<xs:documentation>
+						Situação Portabilidade CTC Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="QtdSitPortlddCTC" type="Qtd">
+				<xs:annotation>
+					<xs:documentation>
+						Quantidade Situação Portabilidade CTC Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="Grupo_ACTC922_QtdMtvRetenOrigdr" type="Grupo_ACTC922_QtdMtvRetenOrigdrComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Quantidade Motivo Retenção Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Grupo_ACTC922_QtdDcrsoPrzOrigdr" type="Grupo_ACTC922_QtdDcrsoPrzOrigdrComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Quantidade Motivo Decurso de Prazo Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Grupo_ACTC922_QtdMtvCanceltOrigdr" type="Grupo_ACTC922_QtdMtvCanceltOrigdrComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Quantidade Motivo Cancelamento Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Grupo_ACTC922_QtdMtvDevLiquidOrigdr" type="Grupo_ACTC922_QtdMtvDevLiquidOrigdrComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Quantidade Motivo Devolução Liquidação Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC922_QtdMtvRetenOrigdrComplexType">
+		<xs:sequence>
+			<xs:element name="MtvRetenContrto" type="MtvRetenContrto">
+				<xs:annotation>
+					<xs:documentation>
+						Motivo Retenção Contrato Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="QtdMtvRetenContrto" type="Qtd">
+				<xs:annotation>
+					<xs:documentation>
+						Quantidade Motivo Retenção Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+		
+	<xs:complexType name="Grupo_ACTC922_QtdDcrsoPrzOrigdrComplexType">
+		<xs:sequence>
+			<xs:element name="MtvDcrsoPrzPortldd" type="MtvDcrsoPrzPortldd">
+				<xs:annotation>
+					<xs:documentation>
+						Motivo Decurso de Prazo Portabilidade
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="QtdMtvDcrsoPrzPortldd" type="Qtd">
+				<xs:annotation>
+					<xs:documentation>
+						Quantidade Motivo Decurso de Prazo
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+		
+	<xs:complexType name="Grupo_ACTC922_QtdMtvCanceltOrigdrComplexType">
+		<xs:sequence>
+			<xs:element name="MtvCanceltPortldd" type="MtvCanceltPortldd">
+				<xs:annotation>
+					<xs:documentation>
+						Motivo Cancelamento Portabilidade Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="QtdMtvCanceltPortldd" type="Qtd">
+				<xs:annotation>
+					<xs:documentation>
+						Quantidade Motivo Cancelamento Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC922_QtdMtvDevLiquidOrigdrComplexType">
+		<xs:sequence>
+			<xs:element name="MtvDevLiquidPortldd" type="MtvDevLiquidPortldd">
+				<xs:annotation>
+					<xs:documentation>
+						Motivo Devolução Liquidação Portabilidade Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="QtdMtvDevLiquidPortldd" type="Qtd">
+				<xs:annotation>
+					<xs:documentation>
+						Quantidade Motivo Devolução Liquidação Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC922_VisaoPropntComplexType">
+		<xs:sequence>
+			<xs:element name="IdentdPartAdmdo" type="CNPJBase">
+				<xs:annotation>
+					<xs:documentation>
+						Identificador Participante Administrado 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="Grupo_ACTC922_DadVisaoPropnt" type="Grupo_ACTC922_DadVisaoPropntComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Dados Visão Proponente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC922_DadVisaoPropntComplexType">
+		<xs:sequence>
+			<xs:element name="TpContrto" type="TpContrto">
+				<xs:annotation>
+					<xs:documentation>
+						Tipo Contrato 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TpEnteCons" type="TpEnteCons" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Tipo de Ente Consignante
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="Grupo_ACTC922_QtdSitPortlddPropnt" type="Grupo_ACTC922_QtdSitPortlddPropntComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Quantidade Situação Portabilidade Proponente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC922_QtdSitPortlddPropntComplexType">
+		<xs:sequence>
+			<xs:element name="SitPortlddCTC" type="SitPortlddCTC">
+				<xs:annotation>
+					<xs:documentation>
+						Situação Portabilidade CTC Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="QtdSitPortlddCTC" type="Qtd">
+				<xs:annotation>
+					<xs:documentation>
+						Quantidade Situação Portabilidade CTC Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="Grupo_ACTC922_QtdMtvRetenPropnt" type="Grupo_ACTC922_QtdMtvRetenPropntComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Quantidade Motivo Retenção Proponente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Grupo_ACTC922_QtdDcrsoPrzPropnt" type="Grupo_ACTC922_QtdDcrsoPrzPropntComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Quantidade Motivo Decurso de Prazo Proponente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Grupo_ACTC922_QtdMtvCanceltPropnt" type="Grupo_ACTC922_QtdMtvCanceltPropntComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Quantidade Motivo Cancelamento Proponente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Grupo_ACTC922_QtdMtvDevLiquidPropnt" type="Grupo_ACTC922_QtdMtvDevLiquidPropntComplexType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						Grupo Quantidade Motivo Devolução Liquidação Proponente
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC922_QtdMtvRetenPropntComplexType">
+		<xs:sequence>
+			<xs:element name="MtvRetenContrto" type="MtvRetenContrto">
+				<xs:annotation>
+					<xs:documentation>
+						Motivo Retenção Contrato Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="QtdMtvRetenContrto" type="Qtd">
+				<xs:annotation>
+					<xs:documentation>
+						Quantidade Motivo Retenção Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+		
+	<xs:complexType name="Grupo_ACTC922_QtdDcrsoPrzPropntComplexType">
+		<xs:sequence>
+			<xs:element name="MtvDcrsoPrzPortldd" type="MtvDcrsoPrzPortldd">
+				<xs:annotation>
+					<xs:documentation>
+						Motivo Decurso de Prazo Portabilidade
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="QtdMtvDcrsoPrzPortldd" type="Qtd">
+				<xs:annotation>
+					<xs:documentation>
+						Quantidade Motivo Decurso de Prazo
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+		
+	<xs:complexType name="Grupo_ACTC922_QtdMtvCanceltPropntComplexType">
+		<xs:sequence>
+			<xs:element name="MtvCanceltPortldd" type="MtvCanceltPortldd">
+				<xs:annotation>
+					<xs:documentation>
+						Motivo Cancelamento Portabilidade Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="QtdMtvCanceltPortldd" type="Qtd">
+				<xs:annotation>
+					<xs:documentation>
+						Quantidade Motivo Cancelamento Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Grupo_ACTC922_QtdMtvDevLiquidPropntComplexType">
+		<xs:sequence>
+			<xs:element name="MtvDevLiquidPortldd" type="MtvDevLiquidPortldd">
+				<xs:annotation>
+					<xs:documentation>
+						Motivo Devolução Liquidação Portabilidade Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="QtdMtvDevLiquidPortldd" type="Qtd">
+				<xs:annotation>
+					<xs:documentation>
+						Quantidade Motivo Devolução Liquidação Originador
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

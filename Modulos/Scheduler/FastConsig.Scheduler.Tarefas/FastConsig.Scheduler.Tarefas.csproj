@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B2165215-9FF9-46C0-9A9A-4D66AE4FBD80}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FastConsig.Scheduler.Tarefas</RootNamespace>
+    <AssemblyName>FastConsig.Scheduler.Tarefas</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AverbacaoDataPrev.cs" />
+    <Compile Include="AverbacaoSerpro.cs" />
+    <Compile Include="ProcessamentoArquivosPortabilidade.cs" />
+    <Compile Include="ProfissionaisCertificados.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SincronizarBancos.cs" />
+    <Compile Include="SincronizarGerentes.cs" />
+    <Compile Include="SincronizarLojas.cs" />
+    <Compile Include="SincronizarPromotoras.cs" />
+    <Compile Include="SincronizarRedeLojas.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Helpers\FastConsig.Common.Loggin\FastConsig.Common.Loggin.csproj">
+      <Project>{C78A7C89-1891-4DA6-870C-434DDF51DC79}</Project>
+      <Name>FastConsig.Common.Loggin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Helpers\FastConsig.Common.Services\FastConsig.Common.Services.csproj">
+      <Project>{40B83122-F530-4F98-90B2-8A5CCA6E2D63}</Project>
+      <Name>FastConsig.Common.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Entity\FastConsig.ProfissionaisCertificados.Entity.csproj">
+      <Project>{5AB9FAC6-7C53-47DC-BF26-98C7DCAE2736}</Project>
+      <Name>FastConsig.ProfissionaisCertificados.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Service\FastConsig.ProfissionaisCertificados.Service.csproj">
+      <Project>{36A9AAA8-3C34-4185-BC0F-4B9060D8A6EC}</Project>
+      <Name>FastConsig.ProfissionaisCertificados.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FastConsig.Scheduler.Model\FastConsig.Scheduler.Model.csproj">
+      <Project>{3746578e-f742-491f-a0fa-615ded64dd78}</Project>
+      <Name>FastConsig.Scheduler.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FastConsig.Scheduler.Services\FastConsig.Scheduler.Services.csproj">
+      <Project>{543A9F41-684C-489E-A65C-AFC60079A8ED}</Project>
+      <Name>FastConsig.Scheduler.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

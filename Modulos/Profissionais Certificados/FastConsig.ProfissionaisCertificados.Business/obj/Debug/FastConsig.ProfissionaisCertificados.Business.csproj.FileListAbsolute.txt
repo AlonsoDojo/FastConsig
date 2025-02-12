@@ -1,0 +1,15 @@
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Business\bin\Debug\FastConsig.ProfissionaisCertificados.Business.dll
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Business\bin\Debug\FastConsig.ProfissionaisCertificados.Business.pdb
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Business\bin\Debug\FastConsig.ProfissionaisCertificados.Data.dll
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Business\bin\Debug\FastConsig.ProfissionaisCertificados.Entity.dll
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Business\bin\Debug\Framework.dll
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Business\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Business\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Business\bin\Debug\FastConsig.ProfissionaisCertificados.Data.pdb
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Business\bin\Debug\FastConsig.ProfissionaisCertificados.Entity.pdb
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Business\bin\Debug\Microsoft.ReportViewer.WebForms.xml
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Business\obj\Debug\FastConsig.ProfissionaisCertificados.Business.csproj.AssemblyReference.cache
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Business\obj\Debug\FastConsig.ProfissionaisCertificados.Business.csproj.CoreCompileInputs.cache
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Business\obj\Debug\FastCons.872DF1D2.Up2Date
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Business\obj\Debug\FastConsig.ProfissionaisCertificados.Business.dll
+C:\Git\FastConsig\Modulos\Profissionais Certificados\FastConsig.ProfissionaisCertificados.Business\obj\Debug\FastConsig.ProfissionaisCertificados.Business.pdb

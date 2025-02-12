@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ACTC928"
+    xmlns="http://www.cip-bancos.org.br/ARQ/ACTC928.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:cat="http://www.cip-bancos.org.br/catalogomsg"
+    targetNamespace="http://www.cip-bancos.org.br/ARQ/ACTC928.xsd"
+    elementFormDefault="qualified"
+    version="1.11.0">
+
+    <!-- Definição dos Tipos Globais -->
+    <xs:include schemaLocation="ACTCTIPOS.xsd" />
+
+    <!-- Definição do ACTCDOC -->
+    <xs:element name="ACTCDOC" type="ACTCDOCComplexType">
+        <xs:annotation>
+            <xs:documentation>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <!-- Definição do ACTCDOC do arquivo -->
+    <xs:complexType name="ACTCDOCComplexType">
+        <xs:sequence>
+            <xs:element name="BCARQ" type="BCARQComplexType" />
+            <xs:element name="SISARQ" type="SISARQComplexType" />
+            <xs:element name="ESTARQ" type="ESTARQSimpleType" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Definição do SISARQ do arquivo -->
+    <xs:complexType name="SISARQComplexType">
+        <xs:choice>
+            <xs:element name="ACTC928" type="ACTC928ComplexType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:InfMensagem>
+                            <cat:Mensagem>Relatorio de Clientes</cat:Mensagem>
+                            <cat:Emissor>CTC</cat:Emissor>
+                            <cat:Destinatario>IF</cat:Destinatario>
+                        </cat:InfMensagem>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="ACTC928ComplexType">
+        <xs:sequence>
+            <xs:element name="NumCtrlCIP" type="ControleIF" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Número Controle CIP
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Grupo_ACTC928_Grupo_Cliente" type="Grupo_ACTC928_RelatorioParticipantes_ComplexType" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        Clientes
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Grupo_ACTC928_RelatorioParticipantes_ComplexType">
+        <xs:sequence>
+            <xs:element name="NomeCli" type="Texto" >
+                <xs:annotation>
+                    <xs:documentation>
+                        Nome do Cliente
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CnpjCli" type="CNPJ" >
+                <xs:annotation>
+                    <xs:documentation>
+                        CNPJ do Cliente
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ISPBCli" type="CNPJBase" >
+                <xs:annotation>
+                    <xs:documentation>
+                        ISPB do Cliente
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Grupo_ACTC928_Produto" type="Grupo_ACTC928_Produto_ComplexType" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        Descrição produto
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Grupo_ACTC928_Produto_ComplexType">
+        <xs:sequence>
+            <xs:element name="DescricaoProduto" type="Texto">
+                <xs:annotation>
+                    <xs:documentation>
+                        Descricao do protudo
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema id="ACTC925ERR"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   targetNamespace="http://www.cip-bancos.org.br/ARQ/ACTC925ERR.xsd"
+		   xmlns="http://www.cip-bancos.org.br/ARQ/ACTC925ERR.xsd"
+		   xmlns:cat="http://www.cip-bancos.org.br/catalogomsg"
+		   elementFormDefault="qualified"
+           version="1.11.0">
+
+	<xs:include schemaLocation="ACTCTIPOS.xsd" />
+
+	<!-- Definição do arquivo -->
+	<xs:element name="ACTCDOC" type="ACTCDOCERRComplexType">
+		<xs:annotation>
+			<xs:documentation>
+				<cat:InfEvento>
+					<cat:Evento>ACTC925ERR - CTC informa resultado da solicitação de Relação de Arquivos Processados.</cat:Evento>
+					<cat:Descricao>Destinado ao sistema CTC informar erro no resultado da solicitação de geração da Relação de Arquivos Processados.</cat:Descricao>
+					<cat:Servico>Erro no arquivo de Relação de Arquivos Processados.</cat:Servico>
+					<cat:TipoFluxo>
+					</cat:TipoFluxo>
+				</cat:InfEvento>
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	
+</xs:schema>

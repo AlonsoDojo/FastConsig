@@ -1,0 +1,20 @@
+CREATE TABLE FastConsig.dbo.ComunicadosStatus (
+  Id int IDENTITY,
+  Descricao varchar(50) NOT NULL,
+  CONSTRAINT PK_ComunicadosStatus_Id PRIMARY KEY CLUSTERED (Id)
+)
+ON [PRIMARY]
+GO
+
+SET DATEFORMAT ymd
+SET ARITHABORT, ANSI_PADDING, ANSI_WARNINGS, CONCAT_NULL_YIELDS_NULL, QUOTED_IDENTIFIER, ANSI_NULLS, NOCOUNT ON
+SET NUMERIC_ROUNDABORT, IMPLICIT_TRANSACTIONS, XACT_ABORT OFF
+GO
+
+SET IDENTITY_INSERT FastConsig.dbo.ComunicadosStatus ON
+GO
+INSERT FastConsig.dbo.ComunicadosStatus(Id, Descricao) VALUES (1, 'Ativo')
+INSERT FastConsig.dbo.ComunicadosStatus(Id, Descricao) VALUES (2, 'Inativo')
+GO
+SET IDENTITY_INSERT FastConsig.dbo.ComunicadosStatus OFF
+GO

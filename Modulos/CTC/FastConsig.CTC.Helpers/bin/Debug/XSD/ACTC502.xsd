@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema id="ACTC502"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:cat="http://www.cip-bancos.org.br/catalogomsg" 
+	targetNamespace="http://www.cip-bancos.org.br/ARQ/ACTC502.xsd" 
+	xmlns="http://www.cip-bancos.org.br/ARQ/ACTC502.xsd" 
+	elementFormDefault="qualified"
+    version="1.11.0">
+	
+	<!-- Definição dos Tipos Globais -->
+	<xs:include schemaLocation="ACTCTIPOS.xsd" />
+
+	<!-- Definição do ACTCDOC do arquivo -->
+	<xs:complexType name="ACTCDOCComplexType">
+		<xs:sequence>
+			<xs:element name="BCARQ" type="BCARQComplexType" />
+			<xs:element name="SISARQ" type="SISARQComplexType" />
+			<xs:element name="ESTARQ" type="ESTARQSimpleType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- Definição do ACTCDOC -->
+	<xs:element name="ACTCDOC" type="ACTCDOCComplexType">
+		<xs:annotation>
+			<xs:documentation>
+        
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>	
+
+	<!-- Definição do SISARQ -->
+		<xs:complexType name="SISARQComplexType">
+		<xs:choice>
+			<xs:element name="ACTC502" type="ACTC502ComplexType">
+				<xs:annotation>
+					<xs:documentation>
+						<cat:InfMensagem>
+							<cat:Mensagem>CTC informa solicitação de transferência de contrato de outros créditos</cat:Mensagem>
+							<cat:Emissor>CTC</cat:Emissor>
+							<cat:Destinatario>IF Credora Original</cat:Destinatario>
+						</cat:InfMensagem>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="ACTC502ComplexType">
+		<xs:sequence>
+      <xs:element name="Grupo_ACTC502_Portldd" type="Grupo_ACTC502_PortlddComplexType" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Grupo_ACTC502_PortlddComplexType">
+		<xs:sequence>
+      <xs:element name="IdentdPartAdmdo" type="CNPJBase">
+        <xs:annotation>
+          <xs:documentation>
+            Identificador do participante administrado
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NUPortlddCTC" type="NU">
+        <xs:annotation>
+          <xs:documentation>
+            Número da portabilidade no CTC
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdentdIFPropnt" type="CNPJBase">
+        <xs:annotation>
+          <xs:documentation>
+            Identificador do solicitante da transferência
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Grupo_ACTC502_IdentdContrto" type="Grupo_IdentdContrto_ComplexType_1">
+        <xs:annotation>
+          <xs:documentation>
+            Grupo Identificador Contrato
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DtRefSaldDevdrContb" type="Data">
+        <xs:annotation>
+          <xs:documentation>
+            Data Referência Saldo Devedor
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VlrSaldDevdrContb" type="Valor">
+        <xs:annotation>
+          <xs:documentation>
+            Valor Saldo Devedor
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Grupo_ACTC502_Cli" type="Grupo_ACTC_CliComplexType_CodErro">
+        <xs:annotation>
+          <xs:documentation>
+            Grupo Cliente
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Grupo_ACTC502_PropPortldd" type="Grupo_ACTC502_PropPortlddComplexType">
+        <xs:annotation>
+          <xs:documentation>
+            Grupo Proposta Portabilidade
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Grupo_ACTC502_EndCartaPortldd" type="Grupo_EndCartaPortldd_ComplexType">
+        <xs:annotation>
+          <xs:documentation>
+            Grupo Endereço Carta Portabilidade
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Grupo_ACTC502_PropPortlddComplexType">
+    <xs:sequence>
+      <xs:element name="TpTx" type="TpTaxa">
+        <xs:annotation>
+          <xs:documentation>
+            Tipo Taxa
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TxJurosNoml" type="Percentual">
+        <xs:annotation>
+          <xs:documentation>
+            Taxa Juros Nominal % a.a.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TxJurosEft" type="Percentual">
+        <xs:annotation>
+          <xs:documentation>
+            Taxa Juros Efetiva % a.a.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TxCET" type="Percentual">
+        <xs:annotation>
+          <xs:documentation>
+            Taxa CET
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CodMoeda" type="CodMoeda">
+        <xs:annotation>
+          <xs:documentation>
+            Código Moeda Contrato
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IndRemun" type="IndRemun" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            Índice Remuneração
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RegmAmtzc" type="RegmAmtzc">
+        <xs:annotation>
+          <xs:documentation>
+            Regime Amortização
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DtContrOp" type="Data">
+        <xs:annotation>
+          <xs:documentation>
+            Data Contratação Operação
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="QtdTotParclContrto" type="Qtd">
+        <xs:annotation>
+          <xs:documentation>
+            Quantidade Total Parcelas Contrato
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FlxPagto" type="FluxoPagto">
+        <xs:annotation>
+          <xs:documentation>
+            Fluxo de Pagamento
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Grupo_ACTC502_ParclNorml" type="Grupo_ParclNorml_ComplexType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            Grupo Parcela Normal
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Grupo_ACTC502_ParclIrreglr" type="Grupo_ParclIrreglr_ComplexType" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            Grupo Parcela Irregular
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+     
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

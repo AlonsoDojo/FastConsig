@@ -1,0 +1,11 @@
+C:\Git\FastConsig\Modulos\Consignado\FastConsig.Consignado.Entity\bin\Debug\FastConsig.Consignado.Entity.dll
+C:\Git\FastConsig\Modulos\Consignado\FastConsig.Consignado.Entity\bin\Debug\FastConsig.Consignado.Entity.pdb
+C:\Git\FastConsig\Modulos\Consignado\FastConsig.Consignado.Entity\bin\Debug\Framework.dll
+C:\Git\FastConsig\Modulos\Consignado\FastConsig.Consignado.Entity\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+C:\Git\FastConsig\Modulos\Consignado\FastConsig.Consignado.Entity\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Git\FastConsig\Modulos\Consignado\FastConsig.Consignado.Entity\bin\Debug\Microsoft.ReportViewer.WebForms.xml
+C:\Git\FastConsig\Modulos\Consignado\FastConsig.Consignado.Entity\obj\Debug\FastConsig.Consignado.Entity.csproj.AssemblyReference.cache
+C:\Git\FastConsig\Modulos\Consignado\FastConsig.Consignado.Entity\obj\Debug\FastConsig.Consignado.Entity.csproj.CoreCompileInputs.cache
+C:\Git\FastConsig\Modulos\Consignado\FastConsig.Consignado.Entity\obj\Debug\FastCons.16A5EE10.Up2Date
+C:\Git\FastConsig\Modulos\Consignado\FastConsig.Consignado.Entity\obj\Debug\FastConsig.Consignado.Entity.dll
+C:\Git\FastConsig\Modulos\Consignado\FastConsig.Consignado.Entity\obj\Debug\FastConsig.Consignado.Entity.pdb
